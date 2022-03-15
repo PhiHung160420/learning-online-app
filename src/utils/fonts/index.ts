@@ -1,6 +1,6 @@
 import { sizes } from "utils/sizes";
 
-export const FONTS = {
+export const fonts = {
   largeTitle: { fontFamily: "Roboto-Black", fontSize: sizes.largeTitle },
   h1: { fontFamily: "Roboto-Black", fontSize: sizes.h1, lineHeight: 36 },
   h2: { fontFamily: "Roboto-Bold", fontSize: sizes.h2, lineHeight: 30 },

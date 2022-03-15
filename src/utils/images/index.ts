@@ -3,7 +3,7 @@ const images = {
   bg_dark : require("../assets/images/bg_dark.png"),
   doc : require("../assets/images/doc.png"),
   bg_1 : require("../assets/images/bg_1.png"),
-  work : require("../assets/images/work.png"),
+  work : require("assets/images/work.png"),
   featured_bg_image : require("../assets/images/featured_bg_image.png"),
   mobile_image : require("../assets/images/mobile_image.png"),
   pdf : require("../assets/images/pdf.png"),
