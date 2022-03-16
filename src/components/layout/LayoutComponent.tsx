@@ -1,4 +1,4 @@
-import { Tabs } from 'components/common';
+import { BottomTabBar } from 'components/common';
 import React, { useCallback, useRef } from 'react';
 import { Animated, FlatList, StyleSheet, View } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
@@ -56,7 +56,7 @@ const LayoutComponent = () => {
       <View style={styles.bottomTab}>
         <Shadow size={[deviceWidth - (sizes.paddingTab * 2), sizes.size_65]}>
           <View style={styles.tab}>
-            <Tabs scrollX={scrollX} onBottomTabPress={onBottomTabPress}/>
+            <BottomTabBar scrollX={scrollX} onBottomTabPress={onBottomTabPress}/>
           </View>
         </Shadow>
       </View>

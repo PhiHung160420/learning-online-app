@@ -47,7 +47,7 @@ export const sizes = {
   base: 8,
   font: 14,
   radius: 12,
-  padding: 24,
+  padding: 20,
 	paddingTab: 10,
 
   // font sizes
@@ -150,6 +150,7 @@ export const sizes = {
 	size_120: size(120),
 	size_110: size(110),
 	size_115: size(115),
+	size_130: size(140),
 	size_140: size(140),
 	size_147: size(147),
 	size_150: size(150),
@@ -159,6 +160,7 @@ export const sizes = {
 	size_172: size(172),
 	size_200: size(200),
 	size_250: size(250),
+	size_270: size(270),
 	size_300: size(300),
 	size_325: size(325),
 	size_350: size(300),

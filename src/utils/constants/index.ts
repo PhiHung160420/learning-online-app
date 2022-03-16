@@ -14,7 +14,7 @@ const walkthrough = [
       id: 0,
       title: "Explore Online Courses",
       sub_title: "All types of educational & professional courses available online.",
-      image: require('assets/images/work.png')
+      image: require('../../../assets/images/work.png')
   },
   {
       id: 1,

@@ -16,7 +16,7 @@ interface ITabIndicator {
   scrollX: any
 };
 
-interface ITabs {
+interface IBottomTab {
   scrollX: any,
   onBottomTabPress: Function
 };
@@ -39,7 +39,7 @@ const TabIndicator = ({measureLayout, scrollX}: ITabIndicator) => {
   )
 }
 
-const Tabs = memo(({scrollX, onBottomTabPress}: ITabs) => {
+const BottomTabBar = memo(({scrollX, onBottomTabPress}: IBottomTab) => {
   const containerRef = useRef<View>(null);
   const [measureLayout, setMeasureLayout] = useState<any[]>([]);
 
@@ -119,4 +119,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Tabs;
+export default BottomTabBar;
