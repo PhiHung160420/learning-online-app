@@ -78,7 +78,15 @@ const HomeComponent = () => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.flatListCategories}
             renderItem={({item, index}) => (
-              <CategoryCard category={item} index={index}/>
+              <CategoryCard 
+                category={item} 
+                containerStyle={
+                  {
+                    marginLeft: index === 0 ? sizes.padding : sizes.base,
+                    marginRight: index === data.categories.length - 1 ? sizes.padding : 0
+                  }
+                }
+              />
             )}
           />
         </Section>

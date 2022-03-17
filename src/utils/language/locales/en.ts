@@ -8,5 +8,10 @@ export default {
 	HOME_SCREEN_START_LEARNING_BUTTON: 'Start Learning',
 	HOME_SCREEN_SEE_ALL_BUTTON: 'See All',
 	HOME_SCREEN_CATEGORIES: 'Categories',
-	HOMR_SCREEN_POPULAR_COURSES: 'Popular Courses'
+	HOMR_SCREEN_POPULAR_COURSES: 'Popular Courses',
+
+	// Search Screen
+	SEARCH_SCREEN_TOP_SEARCHES: 'Top Searches',
+	SEARCH_SCREEN_CATEGORIES: 'Browse Categories',
+	SEARCH_SCREEN_INPUT_PLACEHOLDER: 'Search for Topics Courses & Educators'
 }

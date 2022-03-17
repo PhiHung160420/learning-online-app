@@ -10,6 +10,7 @@ import LineDivider from "./lineDivider";
 import CategoryCard from "./cards/categoryCard";
 import Section from "./section";
 import HorizontalCoursesCard from "./cards/horizontalCourseCard";
+import SearchInput from "./inputs/searchInput";
 
 export {
   BottomTabBar,
@@ -23,5 +24,6 @@ export {
   LineDivider,
   CategoryCard,
   Section,
-  HorizontalCoursesCard
+  HorizontalCoursesCard,
+  SearchInput
 }

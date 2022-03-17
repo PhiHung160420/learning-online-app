@@ -12,6 +12,7 @@ module.exports = {
 					'@screens': './src/screens',
 				}
 			}
-		]
+		],
+		'react-native-reanimated/plugin'
 	]
 };

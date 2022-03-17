@@ -1,9 +1,17 @@
 import SearchComponent from 'components/search/SearchComponent'
-import React from 'react'
+import React, { useState } from 'react'
 
 const SearchScreen = () => {
+  const [searchInput, setSearchInput] = useState('');
+  const [selectedTopSearch, setSelectedTopSearch] = useState(null);
+
   return (
-    <SearchComponent />
+    <SearchComponent 
+      searchInput={searchInput}
+      setSearchInput={setSearchInput}
+      selectedTopSearch={selectedTopSearch}
+      setSelectedTopSearch={setSelectedTopSearch}
+    />
   )
 }
 

@@ -14,14 +14,12 @@ interface ICategoryData {
 interface IProps {
   category?: ICategoryData,
   containerStyle?: StyleProp<ViewStyle>,
-  index?: number
 };
 
 const CategoryCard = (props: IProps) => {
   const {
     category,
     containerStyle,
-    index
   } = props;
 
   const title = category?.title || '';
@@ -32,14 +30,8 @@ const CategoryCard = (props: IProps) => {
       <ImageBackground
         source={thumbnail}
         resizeMode="cover"
-        style={[
-          styles.imageBackgroud, 
-          containerStyle,
-          {
-            marginLeft: index === 0 ? sizes.padding : sizes.base,
-            marginRight: index === data.categories.length - 1 ? sizes.padding : 0
-          }
-        ]}
+        style={[styles.imageBackgroud, containerStyle]}
+        imageStyle={styles.radius}
       >
         <Text style={styles.title}>{title}</Text>
       </ImageBackground>
@@ -54,6 +46,10 @@ const styles = StyleSheet.create({
     paddingVertical: sizes.padding,
     paddingHorizontal: sizes.radius,
     justifyContent: 'flex-end',
+    borderRadius: sizes.radius
+  },
+  radius: {
+    borderRadius: sizes.radius
   },
   title: {
     color: colors.white,

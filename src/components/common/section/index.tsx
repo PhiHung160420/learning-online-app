@@ -6,15 +6,17 @@ import { sizes } from 'utils/sizes';
 
 interface IProps {
   containerStyle?: StyleProp<ViewStyle>,
+  headerStyle?: StyleProp<ViewStyle>,
   title?: string,
   button?: string,
   children?: any,
-  onPress: () => void
+  onPress?: () => void
 }
 
 const Section = (props: IProps) => {
   const {
     containerStyle,
+    headerStyle,
     title,
     button,
     children,
@@ -22,13 +24,13 @@ const Section = (props: IProps) => {
   } = props;
   return (
     <View style={containerStyle}>
-      <View style={styles.header}>
+      <View style={[styles.header, headerStyle]}>
         {title && title.length > 0 && <Text style={styles.text}>{title}</Text>}
         
         {button && button.length > 0 && 
           <TextButton 
             label={button}
-            onPress={onPress}
+            onPress={onPress ? onPress : () => {}}
           />}
       </View>
       {children}
