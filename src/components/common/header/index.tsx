@@ -5,14 +5,14 @@ import colors from 'utils/colors';
 import { fonts } from 'utils/fonts';
 import { sizes } from 'utils/sizes';
 
-interface HomeHeaderProps {
+interface IProps {
   title?: string,
   subTitle?: string,
   icon?: ImageSourcePropType,
   style?: StyleProp<ViewStyle>
 }
 
-const HomeHeader = (props: HomeHeaderProps) => {
+const Header = (props: IProps) => {
   const {
     title,
     subTitle,
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeHeader
+export default Header

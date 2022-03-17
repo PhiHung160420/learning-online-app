@@ -13,5 +13,12 @@ export default {
 	// Search Screen
 	SEARCH_SCREEN_TOP_SEARCHES: 'Top Searches',
 	SEARCH_SCREEN_CATEGORIES: 'Browse Categories',
-	SEARCH_SCREEN_INPUT_PLACEHOLDER: 'Search for Topics Courses & Educators'
+	SEARCH_SCREEN_INPUT_PLACEHOLDER: 'Search for Topics Courses & Educators',
+
+	// Profile Screen
+	PROFILE_SCREEN_HEADER_TITLE: 'Profile',
+	PROFILE_SCREEN_INFO_NAME: 'Phan Phi Hung',
+	PROFILE_SCREEN_INFO_JOB: 'React Native Developer',
+	PROFILE_SCREEN_OVERALL_PROGRESS: 'Overall Progress',
+	PROFILE_SCREEN_BECOME_MEMBER: 'Become Member'
 }

@@ -1,6 +1,6 @@
 import BottomTabBar from "./bottomTabBar";
 import IconText from "./text/iconText";
-import HomeHeader from "./header/homeHeader";
+import Header from "./header";
 import Container from "./container";
 import IconButton from "./buttons/iconButton";
 import LargeCard from "./cards/largeCard";
@@ -11,11 +11,12 @@ import CategoryCard from "./cards/categoryCard";
 import Section from "./section";
 import HorizontalCoursesCard from "./cards/horizontalCourseCard";
 import SearchInput from "./inputs/searchInput";
+import ProgressBar from "./progressBar";
 
 export {
   BottomTabBar,
   IconText,
-  HomeHeader,
+  Header,
   Container,
   IconButton,
   LargeCard,
@@ -25,5 +26,6 @@ export {
   CategoryCard,
   Section,
   HorizontalCoursesCard,
-  SearchInput
+  SearchInput,
+  ProgressBar
 }

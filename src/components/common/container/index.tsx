@@ -2,37 +2,37 @@ import React from 'react';
 import { ImageSourcePropType, SafeAreaView, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import colors from 'utils/colors';
 import { sizes } from 'utils/sizes';
-import HomeHeader from '../header/homeHeader';
+import {Header} from 'components/common';
 
 interface IContainer {
-  isHomeHeader?: boolean,
+  isHeader?: boolean,
   children?: any,
   containerStyle?: StyleProp<ViewStyle>,
-  homeHeaderTitle?: string,
-  homeHeaderSubTitle?: string,
-  homeHeaderIcon?: ImageSourcePropType,
-  homeHeaderStyle?: StyleProp<ViewStyle>,
+  headerTitle?: string,
+  headerSubTitle?: string,
+  headerIcon?: ImageSourcePropType,
+  headerStyle?: StyleProp<ViewStyle>,
 }
 
 const Container = (props: IContainer) => {
   const { 
-    isHomeHeader, 
+    isHeader, 
     children, 
     containerStyle,
-    homeHeaderTitle,
-    homeHeaderSubTitle,
-    homeHeaderIcon,
-    homeHeaderStyle
+    headerTitle,
+    headerSubTitle,
+    headerIcon,
+    headerStyle
   } = props;
 
   return (
     <SafeAreaView style={styles.container}>
-			{isHomeHeader && 
-        <HomeHeader 
-          title={homeHeaderTitle} 
-          subTitle={homeHeaderSubTitle} 
-          icon={homeHeaderIcon}
-          style={homeHeaderStyle}
+			{isHeader && 
+        <Header 
+          title={headerTitle} 
+          subTitle={headerSubTitle} 
+          icon={headerIcon}
+          style={headerStyle}
         />
       }
 			<View style={[styles.content, containerStyle]}>

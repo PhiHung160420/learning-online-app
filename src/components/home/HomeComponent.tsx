@@ -14,10 +14,10 @@ import { sizes } from 'utils/sizes';
 const HomeComponent = () => {
   return (
     <Container
-      isHomeHeader
-      homeHeaderTitle={I18n.t('HOME_SCREEN_TITLE')}
-      homeHeaderSubTitle={I18n.t('HOME_SCREEN_SUB_TITLE')}
-      homeHeaderIcon={icons.notification}
+      isHeader
+      headerTitle={I18n.t('HOME_SCREEN_TITLE')}
+      headerSubTitle={I18n.t('HOME_SCREEN_SUB_TITLE')}
+      headerIcon={icons.notification}
       containerStyle={styles.container}
     >
       <ScrollView
