@@ -1,6 +1,6 @@
-import {IAction, types} from './types';
+import {types} from './types';
 
-export const loadingAction = (payload: any): IAction => ({
+export const loadingAction = ({payload}: any) => ({
   type: types.LOADING_ACTION,
   payload,
 });

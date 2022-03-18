@@ -1,6 +1,7 @@
 import { ProgressBar, TextButton } from 'components/common'
 import React from 'react'
 import { View, TouchableOpacity, Image, Text, StyleSheet } from 'react-native'
+import { useAppSelector } from 'store'
 import colors from 'utils/colors'
 import { fonts } from 'utils/fonts'
 import icons from 'utils/icons'
@@ -9,33 +10,35 @@ import I18n from 'utils/language/i18n'
 import { sizes } from 'utils/sizes'
 
 const ProfileCard = () => {
-  return (
-    <View style={styles.profileCard}>
-      <TouchableOpacity style={styles.ImageContainer}>
-        <Image source={images.profile} style={styles.imageProfile} resizeMode="contain"/>
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
 
-        <View style={styles.camara}>
-          <View style={styles.camaraContainer}>
-            <Image source={icons.camera} style={styles.camaraIcon} resizeMode="contain"/>
+  return (
+    <View style={styles(appTheme).profileCard}>
+      <TouchableOpacity style={styles().ImageContainer}>
+        <Image source={images.profile} style={styles().imageProfile} resizeMode="contain"/>
+
+        <View style={styles().camara}>
+          <View style={styles().camaraContainer}>
+            <Image source={icons.camera} style={styles().camaraIcon} resizeMode="contain"/>
           </View>
         </View>
       </TouchableOpacity>
 
-      <View style={styles.profileDetail}>
-        <Text style={styles.profileName}>{I18n.t('PROFILE_SCREEN_INFO_NAME')}</Text>
+      <View style={styles().profileDetail}>
+        <Text style={styles().profileName}>{I18n.t('PROFILE_SCREEN_INFO_NAME')}</Text>
 
-        <Text style={styles.profileJob}>{I18n.t('PROFILE_SCREEN_INFO_JOB')}</Text>
+        <Text style={styles().profileJob}>{I18n.t('PROFILE_SCREEN_INFO_JOB')}</Text>
         
         <ProgressBar 
           progress="50%" 
-          progressStyle={styles.progress}
+          progressStyle={styles().progress}
           progressName={I18n.t('PROFILE_SCREEN_OVERALL_PROGRESS')}
         />
 
         <TextButton 
           label={`+ ${I18n.t('PROFILE_SCREEN_BECOME_MEMBER')}`}
-          buttonStyle={styles.memberButton}
-          labelStyle={styles.memberButtonLabel}
+          buttonStyle={styles(appTheme).memberButton}
+          labelStyle={styles(appTheme).memberButtonLabel}
           onPress={() => {}}
         />
       </View>
@@ -43,14 +46,14 @@ const ProfileCard = () => {
   )
 };
 
-const styles = StyleSheet.create({
+const styles = (appTheme?: any) => StyleSheet.create({
   profileCard: {
     flexDirection: 'row',
     marginTop: sizes.padding,
     paddingHorizontal: sizes.radius,
     paddingVertical: sizes.size_20,
     borderRadius: sizes.radius,
-    backgroundColor: colors.primary3,
+    backgroundColor: appTheme?.backgroundColor2,
   },
   ImageContainer: {
     width: sizes.size_80,
@@ -103,10 +106,10 @@ const styles = StyleSheet.create({
     height: sizes.size_35,
     marginTop: sizes.padding,
     paddingHorizontal: sizes.size_20,
-    backgroundColor: colors.white
+    backgroundColor: appTheme?.backgroundColor4
   },
   memberButtonLabel: {
-    color: colors.primary
+    color: appTheme?.textColor2
   }
 });
 

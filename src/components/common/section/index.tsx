@@ -1,6 +1,7 @@
 import { TextButton } from 'components/common';
 import React from 'react';
 import { StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { useAppSelector } from 'store';
 import { fonts } from 'utils/fonts';
 import { sizes } from 'utils/sizes';
 
@@ -22,10 +23,13 @@ const Section = (props: IProps) => {
     children,
     onPress
   } = props;
+
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   return (
     <View style={containerStyle}>
       <View style={[styles.header, headerStyle]}>
-        {title && title.length > 0 && <Text style={styles.text}>{title}</Text>}
+        {title && title.length > 0 && <Text style={[styles.text, {color: appTheme?.textColor}]}>{title}</Text>}
         
         {button && button.length > 0 && 
           <TextButton 

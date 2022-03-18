@@ -15,6 +15,7 @@ interface IProps {
   studyReminder: boolean,
   onChangeCourseNoti: (value: boolean) => void,
   onChangeStudyReminder: (value: boolean) => void,
+  onToggleTheme: () => void,
 }
 
 const ProfileComponent = (props: IProps) => {
@@ -22,7 +23,8 @@ const ProfileComponent = (props: IProps) => {
     newCourseNoti,
     studyReminder,
     onChangeCourseNoti,
-    onChangeStudyReminder
+    onChangeStudyReminder,
+    onToggleTheme
   } = props;
 
   return (
@@ -30,6 +32,7 @@ const ProfileComponent = (props: IProps) => {
       isHeader
       headerTitle={I18n.t('PROFILE_SCREEN_HEADER_TITLE')}
       headerIcon={icons.sun}
+      onPressHeaderIcon={onToggleTheme}
     >
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <ProfileCard />

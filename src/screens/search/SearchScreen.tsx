@@ -1,4 +1,4 @@
-import SearchComponent from 'components/search/SearchComponent'
+import { SearchComponent } from 'components';
 import React, { useState } from 'react'
 
 const SearchScreen = () => {

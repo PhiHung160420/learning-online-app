@@ -1,4 +1,7 @@
 export default {
+	// Theme Action
+	THEME_ACTION_INVALID_THEME_TYPE: 'Invalid theme type',
+
 	// Home Screen
 	HOME_SCREEN_TITLE: 'Learning Online App',
 	HOME_SCREEN_SUB_TITLE: 'Tue 15 Mar 2022',

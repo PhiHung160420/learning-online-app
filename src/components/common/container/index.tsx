@@ -3,6 +3,7 @@ import { ImageSourcePropType, SafeAreaView, StyleProp, StyleSheet, View, ViewSty
 import colors from 'utils/colors';
 import { sizes } from 'utils/sizes';
 import {Header} from 'components/common';
+import { useAppSelector } from 'store';
 
 interface IContainer {
   isHeader?: boolean,
@@ -12,6 +13,7 @@ interface IContainer {
   headerSubTitle?: string,
   headerIcon?: ImageSourcePropType,
   headerStyle?: StyleProp<ViewStyle>,
+  onPressHeaderIcon?: () => void,
 }
 
 const Container = (props: IContainer) => {
@@ -22,30 +24,34 @@ const Container = (props: IContainer) => {
     headerTitle,
     headerSubTitle,
     headerIcon,
-    headerStyle
+    headerStyle,
+    onPressHeaderIcon
   } = props;
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles(appTheme).container}>
 			{isHeader && 
         <Header 
           title={headerTitle} 
           subTitle={headerSubTitle} 
           icon={headerIcon}
           style={headerStyle}
+          onPress={onPressHeaderIcon}
         />
       }
-			<View style={[styles.content, containerStyle]}>
+			<View style={[styles().content, containerStyle]}>
 				{children}
 			</View>
 		</SafeAreaView>
   )
 };
 
-const styles = StyleSheet.create({
+const styles = (appTheme?: any) => StyleSheet.create({
   container: { 
-    flex: 1, 
-    backgroundColor: colors.white 
+    flex: 1,
+    backgroundColor: appTheme?.backgroundColor1
   },
   content: { 
     flex: 1, 
@@ -54,4 +60,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Container
+export default Container;

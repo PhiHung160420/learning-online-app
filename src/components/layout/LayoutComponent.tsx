@@ -3,6 +3,7 @@ import React, { useCallback, useRef } from 'react';
 import { Animated, FlatList, StyleSheet, View } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 import { HomeScreen, ProfileScreen, SearchScreen } from 'screens';
+import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import constants from 'utils/constants';
 import { deviceHeight, deviceWidth, sizes } from 'utils/sizes';
@@ -17,9 +18,11 @@ const LayoutComponent = () => {
     })
   }, []);
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   const renderContent = () => {
     return (
-      <View style={styles.content}>
+      <View style={styles().content}>
         <Animated.FlatList 
           ref={flatlistRef}
           horizontal
@@ -39,7 +42,7 @@ const LayoutComponent = () => {
           }
           renderItem={({item, index}) => {
             return (
-              <View style={styles.layout}>
+              <View style={styles().layout}>
                 {item.label == constants.screens.home && <HomeScreen />}
                 {item.label == constants.screens.profile && <ProfileScreen />}
                 {item.label == constants.screens.search && <SearchScreen />}
@@ -53,9 +56,9 @@ const LayoutComponent = () => {
 
   const renderBottomTab = () => {
     return (
-      <View style={styles.bottomTab}>
+      <View style={styles().bottomTab}>
         <Shadow size={[deviceWidth - (sizes.paddingTab * 2), sizes.size_65]}>
-          <View style={styles.tab}>
+          <View style={styles(appTheme).tab}>
             <BottomTabBar scrollX={scrollX} onBottomTabPress={onBottomTabPress}/>
           </View>
         </Shadow>
@@ -64,7 +67,7 @@ const LayoutComponent = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles(appTheme).container}>
       {/* Contents */}
       {renderContent()}
 
@@ -74,10 +77,10 @@ const LayoutComponent = () => {
   )
 };
 
-const styles = StyleSheet.create({
+const styles = (appTheme?: any) => StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white
+    backgroundColor: appTheme?.backgroundColor1
   },
   content: {
     flex: 1
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     borderRadius: sizes.radius,
-    backgroundColor: colors.primary3
+    backgroundColor: appTheme?.backgroundColor2
   }
 });
 

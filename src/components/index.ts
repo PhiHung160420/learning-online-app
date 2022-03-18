@@ -5,5 +5,7 @@ import ProfileComponent from "./profile/ProfileComponent";
 
 export {
   HomeComponent,
-  LayoutComponent
+  LayoutComponent,
+  SearchComponent,
+  ProfileComponent
 }

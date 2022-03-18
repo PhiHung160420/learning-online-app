@@ -1,6 +1,7 @@
 import {IconButton} from 'components/common';
 import React from 'react'
 import { ImageSourcePropType, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native'
+import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import { fonts } from 'utils/fonts';
 import { sizes } from 'utils/sizes';
@@ -9,7 +10,8 @@ interface IProps {
   title?: string,
   subTitle?: string,
   icon?: ImageSourcePropType,
-  style?: StyleProp<ViewStyle>
+  style?: StyleProp<ViewStyle>,
+  onPress?: () => void,
 }
 
 const Header = (props: IProps) => {
@@ -17,22 +19,25 @@ const Header = (props: IProps) => {
     title,
     subTitle,
     icon,
-    style
+    style,
+    onPress
   } = props;
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   return (
-    <View style={[styles.container, style]}>
-      <View style={styles.content}>
-        {title && title.length > 0 && <Text style={styles.title}>{title}</Text>}
-        {subTitle && subTitle.length > 0 && <Text style={styles.subTitle}>{subTitle}</Text>}
+    <View style={[styles().container, style]}>
+      <View style={styles().content}>
+        {title && title.length > 0 && <Text style={styles(appTheme).title}>{title}</Text>}
+        {subTitle && subTitle.length > 0 && <Text style={styles(appTheme).subTitle}>{subTitle}</Text>}
       </View>
 
-      {icon && <IconButton icon={icon} onPress={() => {}} iconStyle={styles.icon}/>}
+      {icon && <IconButton icon={icon} onPress={onPress !== undefined ? onPress : () => {}} iconStyle={styles(appTheme).icon}/>}
     </View>
   )
 };
 
-const styles = StyleSheet.create({
+const styles = (appTheme?: any) => StyleSheet.create({
   container: {
     flexDirection: 'row',
     paddingHorizontal: sizes.size_16,
@@ -42,14 +47,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    ...fonts.h2
+    ...fonts.h2,
+    color: appTheme?.textColor,
   },
   subTitle: {
     color: colors.gray50,
     ...fonts.body3
   },
   icon: {
-    tintColor: colors.black,
+    tintColor: appTheme?.tintColor,
   }
 });
 

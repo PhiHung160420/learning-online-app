@@ -5,6 +5,7 @@ import { fonts } from 'utils/fonts';
 import icons from 'utils/icons';
 import { sizes } from 'utils/sizes';
 import {RadioButton} from 'components/common';
+import { useAppSelector } from 'store';
 
 interface IProps {
   icon?: ImageSourcePropType,
@@ -27,16 +28,17 @@ const ProfileButton = (props: IProps) => {
     onPress
   } = props;
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
   
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <View style={styles.iconContainer}>
-        {icon && <Image source={icon} resizeMode="contain" style={styles.icon}/>}
+    <TouchableOpacity style={styles().container} onPress={onPress}>
+      <View style={styles(appTheme).iconContainer}>
+        {icon && <Image source={icon} resizeMode="contain" style={styles().icon}/>}
       </View>
 
-      <View style={styles.content}>
-        {label && label.length > 0 && <Text style={styles.label}>{label}</Text>}
-        {value && value.length > 0 && <Text style={styles.value}>{value}</Text>}
+      <View style={styles().content}>
+        {label && label.length > 0 && <Text style={styles().label}>{label}</Text>}
+        {value && value.length > 0 && <Text style={styles(appTheme).value}>{value}</Text>}
       </View>
 
       {isRadioButton ? (
@@ -45,12 +47,12 @@ const ProfileButton = (props: IProps) => {
           onPress={onPressRadioButton !== undefined ? onPressRadioButton : () => {}}
         />
       ) : 
-        <Image source={icons.right_arrow} style={styles.arrowIcon} />}
+        <Image source={icons.right_arrow} style={styles(appTheme).arrowIcon} />}
     </TouchableOpacity>
   )
 };
 
-const styles = StyleSheet.create({
+const styles = (appTheme?: any) => StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: sizes.size_80,
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: sizes.size_20,
-    backgroundColor: colors.additionalColor11
+    backgroundColor: appTheme?.backgroundColor3
   },
   icon: {
     width: sizes.size_25,
@@ -78,11 +80,13 @@ const styles = StyleSheet.create({
     ...fonts.body3
   },
   value: {
-    ...fonts.h3
+    ...fonts.h3,
+    color: appTheme?.textColor
   },
   arrowIcon: {
     width: sizes.size_20,
-    height: sizes.size_20
+    height: sizes.size_20,
+    tintColor: appTheme?.tintColor
   }
 });
 

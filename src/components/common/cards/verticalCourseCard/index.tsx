@@ -7,6 +7,7 @@ import {IconButton, IconText} from 'components/common';
 import icons from 'utils/icons';
 import { fonts } from 'utils/fonts';
 import data from 'utils/data';
+import { useAppSelector } from 'store';
 
 export interface ICourseData {
   id: number,
@@ -25,6 +26,8 @@ const VerticalCourseCard = ({containerStyle, course, index}: IProps) => {
   const title = course?.title || '';
   const duration = course?.duration || '';
   const thumnail = course?.thumbnail || '';
+
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
 
   return (
     <TouchableOpacity 
@@ -51,7 +54,7 @@ const VerticalCourseCard = ({containerStyle, course, index}: IProps) => {
         />
 
         <View style={styles.info}>
-          <Text style={styles.title}>{title}</Text>
+          <Text style={[styles.title, {color: appTheme?.textColor}]}>{title}</Text>
           <IconText icon={icons.time} label={duration} containerStyle={styles.iconLabel}/>
         </View>
       </View>

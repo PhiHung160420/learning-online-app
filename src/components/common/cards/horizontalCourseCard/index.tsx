@@ -7,6 +7,7 @@ import {IconButton, IconText} from 'components/common';
 import icons from 'utils/icons';
 import { fonts } from 'utils/fonts';
 import data from 'utils/data';
+import { useAppSelector } from 'store';
 
 export interface IPopularCourseData {
   id: number,
@@ -34,6 +35,8 @@ const HorizontalCoursesCard = ({containerStyle, course, index}: IProps) => {
   const price = course.price || 0;
   const is_favourite = course.is_favourite || false;
   const thumbnail = course.thumbnail || '';
+
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
 
   return (
     <TouchableOpacity 
@@ -63,10 +66,10 @@ const HorizontalCoursesCard = ({containerStyle, course, index}: IProps) => {
 
       {/* Detail */}
       <View style={styles.detail}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title, {color: appTheme?.textColor}]}>{title}</Text>
 
         <View style={styles.info}>
-          <Text style={styles.instructor}>{instructor}</Text>
+          <Text style={[styles.instructor, {color: appTheme?.textColor}]}>{instructor}</Text>
 
           <IconText 
             icon={icons.time} 
