@@ -1,30 +1,47 @@
-import { Container, ProgressBar } from 'components/common';
+import { Container } from 'components/common';
 import React from 'react';
 import {
-    View,
-    Text,
-    StyleSheet,
-    ScrollView,
-    TouchableOpacity,
-    Image
+  ScrollView, StyleSheet
 } from 'react-native';
-import colors from 'utils/colors';
-import { fonts } from 'utils/fonts';
 import icons from 'utils/icons';
-import images from 'utils/images';
 import I18n from 'utils/language/i18n';
 import { sizes } from 'utils/sizes';
 import ProfileCard from './ProfileCard';
+import ProfileSectionMain from './ProfileSectionMain';
+import ProfileSectionSub from './ProfileSectionSub';
 
-const ProfileComponent = () => {
+interface IProps {
+  newCourseNoti: boolean,
+  studyReminder: boolean,
+  onChangeCourseNoti: (value: boolean) => void,
+  onChangeStudyReminder: (value: boolean) => void,
+}
+
+const ProfileComponent = (props: IProps) => {
+  const {
+    newCourseNoti,
+    studyReminder,
+    onChangeCourseNoti,
+    onChangeStudyReminder
+  } = props;
+
   return (
     <Container 
       isHeader
       headerTitle={I18n.t('PROFILE_SCREEN_HEADER_TITLE')}
       headerIcon={icons.sun}
     >
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <ProfileCard />
+
+        <ProfileSectionMain />
+
+        <ProfileSectionSub 
+          newCourseNoti={newCourseNoti}
+          studyReminder={studyReminder}
+          onChangeCourseNoti={onChangeCourseNoti}
+          onChangeStudyReminder={onChangeStudyReminder}
+        />
       </ScrollView>
     </Container>
   )
@@ -32,9 +49,8 @@ const ProfileComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: sizes.size_150
-  },
-  
+    paddingBottom: sizes.size_100
+  }
 });
 
 export default ProfileComponent;

@@ -33,6 +33,7 @@ const SearchComponent = (props: IProps) => {
 
   const scrollViewRef = useRef<Animated.ScrollView>(null);
   const scrollY = useSharedValue(0);
+  
   const onScroll = useAnimatedScrollHandler((event) => {
     scrollY.value = event.contentOffset.y
   });

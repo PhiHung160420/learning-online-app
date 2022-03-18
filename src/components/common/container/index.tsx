@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   content: { 
     flex: 1, 
     paddingHorizontal: sizes.padding, 
-    paddingBottom: sizes.size_15 
+    paddingBottom: sizes.size_15, 
   }
 });
 

@@ -12,6 +12,8 @@ import Section from "./section";
 import HorizontalCoursesCard from "./cards/horizontalCourseCard";
 import SearchInput from "./inputs/searchInput";
 import ProgressBar from "./progressBar";
+import ProfileButton from "./buttons/profileButton";
+import RadioButton from "./buttons/radioButton";
 
 export {
   BottomTabBar,
@@ -27,5 +29,7 @@ export {
   Section,
   HorizontalCoursesCard,
   SearchInput,
-  ProgressBar
+  ProgressBar,
+  ProfileButton,
+  RadioButton
 }

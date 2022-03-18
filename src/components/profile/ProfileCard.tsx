@@ -23,7 +23,9 @@ const ProfileCard = () => {
 
       <View style={styles.profileDetail}>
         <Text style={styles.profileName}>{I18n.t('PROFILE_SCREEN_INFO_NAME')}</Text>
+
         <Text style={styles.profileJob}>{I18n.t('PROFILE_SCREEN_INFO_JOB')}</Text>
+        
         <ProgressBar 
           progress="50%" 
           progressStyle={styles.progress}
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: sizes.radius,
     paddingVertical: sizes.size_20,
     borderRadius: sizes.radius,
-    backgroundColor: colors.primary3
+    backgroundColor: colors.primary3,
   },
   ImageContainer: {
     width: sizes.size_80,

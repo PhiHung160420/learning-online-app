@@ -1,3 +1,9 @@
+const profile = {
+    name: "Phan Phi Hung",
+    email: "hungphanlk@gmail.com",
+    phone: "+84375616066"
+};
+
 const categories = [
   {
       id: 0,
@@ -354,4 +360,5 @@ export default {
   top_searches,
   course_details,
   notificationByDays,
+  profile
 }
