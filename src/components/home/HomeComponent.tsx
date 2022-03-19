@@ -11,7 +11,11 @@ import images from 'utils/images';
 import I18n from 'utils/language/i18n';
 import { sizes } from 'utils/sizes';
 
-const HomeComponent = () => {
+interface IProps {
+  onPressCategoryCard: (category: any) => void,
+}
+
+const HomeComponent = ({onPressCategoryCard}: IProps) => {
   return (
     <Container
       isHeader
@@ -86,6 +90,7 @@ const HomeComponent = () => {
                     marginRight: index === data.categories.length - 1 ? sizes.padding : 0
                   }
                 }
+                onPressCard={() => onPressCategoryCard(item)}
               />
             )}
           />

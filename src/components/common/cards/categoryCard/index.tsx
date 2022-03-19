@@ -14,19 +14,21 @@ interface ICategoryData {
 interface IProps {
   category?: ICategoryData,
   containerStyle?: StyleProp<ViewStyle>,
+  onPressCard: () => void
 };
 
 const CategoryCard = (props: IProps) => {
   const {
     category,
     containerStyle,
+    onPressCard
   } = props;
 
   const title = category?.title || '';
   const thumbnail = category?.thumbnail || '';
 
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPressCard}>
       <ImageBackground
         source={thumbnail}
         resizeMode="cover"

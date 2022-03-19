@@ -32,4 +32,8 @@ export default {
 	PROFILE_SCREEN_FIELD_PAGES: 'Pages',
 	PROFILE_SCREEN_FIELD_NOTI: 'New Courses Notifications',
 	PROFILE_SCREEN_FIELD_REMINDER: 'Study Reminder',
+
+	// Course Screen
+	COURSE_SCREEN_HEADER: 'Course Listing',
+	COURSE_SCREEN_RESULTS: '1000 results'
 }

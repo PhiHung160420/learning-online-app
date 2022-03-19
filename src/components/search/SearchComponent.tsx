@@ -21,6 +21,7 @@ interface IProps {
   selectedTopSearch: any,
   setSearchInput: (value: string) => void,
   setSelectedTopSearch: (index: any) => void,
+  onPressCategoryCard: (category: any) => void,
 };
 
 const SearchComponent = (props: IProps) => {
@@ -28,7 +29,8 @@ const SearchComponent = (props: IProps) => {
     searchInput,
     selectedTopSearch,
     setSearchInput,
-    setSelectedTopSearch
+    setSelectedTopSearch,
+    onPressCategoryCard
   } = props;
 
   const scrollViewRef = useRef<Animated.ScrollView>(null);
@@ -116,6 +118,7 @@ const SearchComponent = (props: IProps) => {
                     marginLeft: (index + 1) % 2 === 0 ? sizes.radius : sizes.padding,
                   },
                 ]}
+                onPressCard={() => onPressCategoryCard(item)}
               />
             )}
           />

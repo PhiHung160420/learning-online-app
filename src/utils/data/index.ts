@@ -1,3 +1,5 @@
+import images from "utils/images";
+
 const profile = {
     name: "Phan Phi Hung",
     email: "hungphanlk@gmail.com",
@@ -8,32 +10,38 @@ const categories = [
   {
       id: 0,
       title: "Mobile Design",
-      thumbnail: require("../../../assets/images/bg_1.png")
+      thumbnail: require("../../../assets/images/bg_1.png"),
+      image: images.mobile_image
   },
   {
       id: 1,
       title: "3D Modeling",
-      thumbnail: require("../../../assets/images/bg_2.png")
+      thumbnail: require("../../../assets/images/bg_2.png"),
+      image: images.modeling_image
   },
   {
       id: 2,
       title: "Web Designing",
-      thumbnail: require("../../../assets/images/bg_3.png")
+      thumbnail: require("../../../assets/images/bg_3.png"),
+      image: images.web_designing_image
   },
   {
       id: 3,
       title: "Illustrations",
-      thumbnail: require("../../../assets/images/bg_4.png")
+      thumbnail: require("../../../assets/images/bg_4.png"),
+      image: images.illustration_image
   },
   {
       id: 4,
       title: "Drawing",
-      thumbnail: require("../../../assets/images/bg_5.png")
+      thumbnail: require("../../../assets/images/bg_5.png"),
+      image: images.drawing_image
   },
   {
       id: 5,
       title: "Animation",
-      thumbnail: require("../../../assets/images/bg_6.png")
+      thumbnail: require("../../../assets/images/bg_6.png"),
+      image: images.animation_image
   }
 ]
 

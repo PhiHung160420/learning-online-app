@@ -7,7 +7,7 @@ const register_options = [
       id: 1,
       label: "TUTOR"
   }
-]
+];
 
 const walkthrough = [
   {
@@ -175,7 +175,9 @@ const course_details_tabs = [
       id: 2,
       label: "Discussions",
   }
-]
+];
+
+export const HEADER_HEIGHT: number = 250;
 
 export default {
   register_options,
@@ -186,5 +188,5 @@ export default {
   class_types,
   class_levels,
   created_within,
-  course_details_tabs
+  course_details_tabs,
 }
