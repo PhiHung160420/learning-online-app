@@ -1,6 +1,5 @@
-import MainText from 'components/common/text';
 import React from 'react';
-import { StyleProp, StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import colors from 'utils/colors';
 import { sizes, fontWeights } from 'utils/sizes';
 
@@ -32,15 +31,11 @@ const MainButton = (props: ButtonProps) => {
 			buttonStyles,
 			disabled && primary && { backgroundColor: colors.primary }
 		]}>
-			<MainText style={styles.titlePrimary}>
-				{title}
-			</MainText>
+			<Text style={styles.titlePrimary}>{title}</Text>
 		</TouchableOpacity>
 		:
 		<TouchableOpacity disabled={disabled} onPress={onPress} style={[styles.button, styles.buttonOutlined, buttonStyles]}>
-			<MainText style={styles.titleSecondary}>
-				{title}
-			</MainText>
+			<Text style={styles.titleSecondary}>{title}</Text>
 		</TouchableOpacity>;
 
 	return (

@@ -14,10 +14,17 @@ const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
 
 interface IProps {
   flatlistRef?: any,
-  onScroll?: any
+  onScroll?: any,
+  onPressFilterButton: () => void,
 }
 
-const ListingCourses = ({flatlistRef, onScroll}: IProps) => {
+const ListingCourses = (props: IProps) => {
+  const {
+    flatlistRef, 
+    onScroll, 
+    onPressFilterButton
+  } = props;
+
   const listHeaderComponent = () => (
     <View style={styles.headerFlatlist}>
       <Text style={styles.resultText}>{I18n.t('COURSE_SCREEN_RESULTS')}</Text>
@@ -25,7 +32,7 @@ const ListingCourses = ({flatlistRef, onScroll}: IProps) => {
         icon={icons.filter}
         iconStyle={styles.filterIcon}
         containerStyle={styles.filterButton}
-        onPress={() => {}}
+        onPress={onPressFilterButton}
       />
     </View>
   );

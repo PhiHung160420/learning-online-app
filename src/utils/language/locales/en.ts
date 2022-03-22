@@ -35,5 +35,15 @@ export default {
 
 	// Course Screen
 	COURSE_SCREEN_HEADER: 'Course Listing',
-	COURSE_SCREEN_RESULTS: '1000 results'
+	COURSE_SCREEN_RESULTS: '1000 results',
+
+	// Filter Modal
+	FILTER_MODAL_HEADER: 'Filter',
+	FILTER_MODAL_CANCEL: 'Cancel',
+	FILTER_MODAL_CLASS_TYPE: 'Class Type',
+	FILTER_MODAL_CLASS_LEVEL: 'Class Level',
+	FILTER_MODAL_CREATED_WITHIN: 'Created Within',
+	FILTER_MODAL_CLASS_LENGTH: 'Class Length',
+	FILTER_MODAL_RESET: 'Reset',
+	FILTER_MODAL_APPLY: 'Apply'
 }

@@ -14,6 +14,9 @@ import SearchInput from "./inputs/searchInput";
 import ProgressBar from "./progressBar";
 import ProfileButton from "./buttons/profileButton";
 import RadioButton from "./buttons/radioButton";
+import FilterModal from "./modals/filterModal";
+import TopicButton from "./buttons/topicButton";
+import TwoPointSlider from "./sliders/TwoPointSlider";
 
 export {
   BottomTabBar,
@@ -31,5 +34,8 @@ export {
   SearchInput,
   ProgressBar,
   ProfileButton,
-  RadioButton
+  RadioButton,
+  FilterModal,
+  TopicButton,
+  TwoPointSlider
 }
