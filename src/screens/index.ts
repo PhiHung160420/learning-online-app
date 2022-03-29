@@ -4,6 +4,8 @@ import ProfileScreen from "./profile/ProfileScreen";
 import SearchScreen from "./search/SearchScreen";
 import CourseListingScreen from "./course/courseListing/CourseListingScreen";
 import CourseDetailScreen from "./course/courseDetail/CourseDetailScreen";
+import LoginScreen from "./auth/login";
+import RegisterScreen from "./auth/register";
 
 export {
   HomeScreen,
@@ -11,5 +13,7 @@ export {
   ProfileScreen,
   SearchScreen,
   CourseListingScreen,
-  CourseDetailScreen
+  CourseDetailScreen,
+  LoginScreen,
+  RegisterScreen
 }

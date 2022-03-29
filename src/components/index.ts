@@ -4,6 +4,8 @@ import SearchComponent from './search/SearchComponent';
 import ProfileComponent from './profile/ProfileComponent';
 import CourseListingComponent from './course/courseListing/CourseListingComponent';
 import CoursDetailComponent from './course/courseDetail/CoursDetailComponent';
+import LoginComponent from './auth/login/LoginComponent';
+import RegisterComponent from './auth/register/RegisterComponent';
 
 export {
   HomeComponent,
@@ -12,4 +14,6 @@ export {
   ProfileComponent,
   CourseListingComponent,
   CoursDetailComponent,
+  LoginComponent,
+  RegisterComponent
 };

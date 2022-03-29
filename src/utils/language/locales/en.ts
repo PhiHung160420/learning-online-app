@@ -60,5 +60,25 @@ export default {
 	COURSE_DISCUSSIONS: 'Course Discussions',
 	COURSE_DISCUSSIONS_REPLY: 'Reply',
 	COURSE_DISCUSSIONS_LIKE: 'Like',
-	COURSE_DISCUSSIONS_PLACEHOLDER: 'Type Something'
+	COURSE_DISCUSSIONS_PLACEHOLDER: 'Type Something',
+
+	// Login
+	LOGIN_HEADER: 'Login',
+	LOGIN_TEXTFIELD_1: 'Username or Email',
+	LOGIN_TEXTFIELD_2: 'Password',
+	LOGIN_BUTTON: 'LOGIN',
+	LOGIN_BUTTON_OPTION: 'or login with',
+	LOGIN_GOOGLE: 'Google',
+	LOGIN_FACEBOOK: 'Facebook',
+	LOGIN_NEW_USER: 'New User?',
+	LOGIN_SIGN_UP: 'Sign Up Now',
+
+	// Register
+	REGISTER_HEADER: 'Register',
+	REGISTER_USERNAME: 'Username',
+	REGISTER_EMAIL: 'Email',
+	REGISTER_PASSWORD: 'Password',
+	REGISTER_CREATE_ACCOUNT: 'CREATE ACCOUNT',
+	REGISTER_ALREADY_USER: 'Already a user?',
+	REGISTER_LOGIN_BUTTON: 'Login'
 }

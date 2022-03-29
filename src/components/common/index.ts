@@ -20,6 +20,9 @@ import TwoPointSlider from './sliders/TwoPointSlider';
 import VideoCard from './cards/videoCard';
 import ChapterCard from './cards/chapterCard';
 import IconLabelButton from './buttons/iconLabelButton';
+import InputField from './inputs/inputField';
+import PrimaryButton from './buttons/primaryButton';
+import RoleButton from './buttons/roleButton';
 
 export {
   BottomTabBar,
@@ -44,4 +47,7 @@ export {
   VideoCard,
   ChapterCard,
   IconLabelButton,
+  InputField,
+  PrimaryButton,
+  RoleButton
 };

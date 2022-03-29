@@ -20,7 +20,7 @@ interface ButtonProps {
   onPress: () => void;
 }
 
-const MainButton = (props: ButtonProps) => {
+const PrimaryButton = (props: ButtonProps) => {
   const {
     title,
     primary,
@@ -31,7 +31,7 @@ const MainButton = (props: ButtonProps) => {
     onPress,
   } = props;
 
-  const mainButton = !outlined ? (
+  const primaryButton = !outlined ? (
     <TouchableOpacity
       disabled={disabled}
       onPress={onPress}
@@ -39,7 +39,7 @@ const MainButton = (props: ButtonProps) => {
         styles.button,
         primary ? styles.buttonPrimary : styles.buttonSecondary,
         buttonStyles,
-        disabled && primary && {backgroundColor: colors.primary},,
+        disabled && primary && {backgroundColor: colors.primary},
       ]}>
       <Text style={styles.titlePrimary}>{title}</Text>
     </TouchableOpacity>
@@ -52,7 +52,7 @@ const MainButton = (props: ButtonProps) => {
     </TouchableOpacity>
   );
 
-  return <View style={containerStyle}>{mainButton}</View>;
+  return <View style={containerStyle}>{primaryButton}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
   },
   buttonSecondary: {
-    backgroundColor: colors.gray,
+    backgroundColor: colors.gray20,
   },
   buttonOutlined: {
     borderWidth: 1,
@@ -74,14 +74,14 @@ const styles = StyleSheet.create({
   },
   titlePrimary: {
     color: colors.white,
-    fontSize: sizes.size_15,
-    fontFamily: fontWeights.fontWeight_600,
+    fontSize: sizes.size_18,
+    fontWeight: fontWeights.fontWeight_500,
   },
   titleSecondary: {
     color: colors.black,
-    fontSize: sizes.size_15,
-    fontFamily: fontWeights.fontWeight_600,
+    fontSize: sizes.size_18,
+    fontWeight: fontWeights.fontWeight_500,
   },
 });
 
-export default MainButton;
+export default PrimaryButton;
