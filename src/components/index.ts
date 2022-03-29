@@ -6,6 +6,7 @@ import CourseListingComponent from './course/courseListing/CourseListingComponen
 import CoursDetailComponent from './course/courseDetail/CoursDetailComponent';
 import LoginComponent from './auth/login/LoginComponent';
 import RegisterComponent from './auth/register/RegisterComponent';
+import LandingComponent from "components/landing/LandingComponent";
 
 export {
   HomeComponent,
@@ -15,5 +16,6 @@ export {
   CourseListingComponent,
   CoursDetailComponent,
   LoginComponent,
-  RegisterComponent
+  RegisterComponent,
+  LandingComponent
 };

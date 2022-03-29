@@ -1,5 +1,6 @@
 const screenNames = {
-  // stack
+  // Landing
+  LANDING_SCREEN: 'LANDING_SCREEN',
 
   // Layout
   LAYOUT_SCREEN: 'LAYOUT_SCREEN',

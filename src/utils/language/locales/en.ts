@@ -2,6 +2,12 @@ export default {
 	// Theme Action
 	THEME_ACTION_INVALID_THEME_TYPE: 'Invalid theme type',
 
+	// Landing Screen
+	LANDING_HEADER_1: 'Explore Online',
+	LANDING_HEADER_2: 'Courses',
+	LANDING_TITLE: 'All types of educational & professional courses available online.',
+	LANDING_GET_STARTED: 'Get Started',
+
 	// Home Screen
 	HOME_SCREEN_TITLE: 'Learning Online App',
 	HOME_SCREEN_SUB_TITLE: 'Tue 15 Mar 2022',
