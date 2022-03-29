@@ -11,6 +11,7 @@ interface IProps {
   subTitle?: string,
   icon?: ImageSourcePropType,
   style?: StyleProp<ViewStyle>,
+  headerTitleStyle?: StyleProp<ViewStyle>,
   onPress?: () => void,
 }
 
@@ -20,6 +21,7 @@ const Header = (props: IProps) => {
     subTitle,
     icon,
     style,
+    headerTitleStyle,
     onPress
   } = props;
 
@@ -28,7 +30,7 @@ const Header = (props: IProps) => {
   return (
     <View style={[styles().container, style]}>
       <View style={styles().content}>
-        {title && title.length > 0 && <Text style={styles(appTheme).title}>{title}</Text>}
+        {title && title.length > 0 && <Text style={[styles(appTheme).title, headerTitleStyle]}>{title}</Text>}
         {subTitle && subTitle.length > 0 && <Text style={styles(appTheme).subTitle}>{subTitle}</Text>}
       </View>
 

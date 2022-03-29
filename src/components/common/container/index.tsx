@@ -1,9 +1,9 @@
-import React from 'react';
-import { ImageSourcePropType, SafeAreaView, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import colors from 'utils/colors';
-import { sizes } from 'utils/sizes';
-import {Header} from 'components/common';
+import { Header } from 'components/common';
+import React, { Fragment } from 'react';
+import { ImageSourcePropType, Keyboard, KeyboardAvoidingView, SafeAreaView, StyleProp, StyleSheet, TextStyle, TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppSelector } from 'store';
+import { isIOS, sizes } from 'utils/sizes';
 
 interface IContainer {
   isHeader?: boolean,
@@ -13,6 +13,8 @@ interface IContainer {
   headerSubTitle?: string,
   headerIcon?: ImageSourcePropType,
   headerStyle?: StyleProp<ViewStyle>,
+  headerTitleStyle?: StyleProp<TextStyle>,
+  isKeyboardOverlay?: boolean,
   onPressHeaderIcon?: () => void,
 }
 
@@ -25,26 +27,57 @@ const Container = (props: IContainer) => {
     headerSubTitle,
     headerIcon,
     headerStyle,
+    headerTitleStyle,
+    isKeyboardOverlay = false,
     onPressHeaderIcon
   } = props;
 
   const appTheme = useAppSelector(state => state?.theme?.appTheme);
+  const insets = useSafeAreaInsets();
 
   return (
-    <SafeAreaView style={styles(appTheme).container}>
-			{isHeader && 
-        <Header 
-          title={headerTitle} 
-          subTitle={headerSubTitle} 
-          icon={headerIcon}
-          style={headerStyle}
-          onPress={onPressHeaderIcon}
-        />
-      }
-			<View style={[styles().content, containerStyle]}>
-				{children}
-			</View>
-		</SafeAreaView>
+    <Fragment>
+			{isIOS
+				? <KeyboardAvoidingView
+            keyboardVerticalOffset={isKeyboardOverlay ? 20 + insets.bottom : 0}
+            behavior={'padding'}
+            style={{ flex: 1 }}
+          >
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+              <SafeAreaView style={styles(appTheme).container}>
+                {isHeader && 
+                  <Header 
+                    title={headerTitle} 
+                    subTitle={headerSubTitle} 
+                    icon={headerIcon}
+                    style={headerStyle}
+                    headerTitleStyle={headerTitleStyle}
+                    onPress={onPressHeaderIcon}
+                  />}
+                <View style={[styles().content, containerStyle]}>
+                  {children}
+                </View>
+              </SafeAreaView>
+            </TouchableWithoutFeedback>
+				  </KeyboardAvoidingView>
+				: <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <SafeAreaView style={styles(appTheme).container}>
+              {isHeader && 
+                <Header 
+                  title={headerTitle} 
+                  subTitle={headerSubTitle} 
+                  icon={headerIcon}
+                  style={headerStyle}
+                  headerTitleStyle={headerTitleStyle}
+                  onPress={onPressHeaderIcon}
+                />}
+              <View style={[styles().content, containerStyle]}>
+                {children}
+              </View>
+            </SafeAreaView>
+				  </TouchableWithoutFeedback>
+			}
+		</Fragment>
   )
 };
 
@@ -61,3 +94,20 @@ const styles = (appTheme?: any) => StyleSheet.create({
 });
 
 export default Container;
+
+
+{/* <SafeAreaView style={styles(appTheme).container}>
+  {isHeader && 
+    <Header 
+      title={headerTitle} 
+      subTitle={headerSubTitle} 
+      icon={headerIcon}
+      style={headerStyle}
+      headerTitleStyle={headerTitleStyle}
+      onPress={onPressHeaderIcon}
+    />
+  }
+  <View style={[styles().content, containerStyle]}>
+    {children}
+  </View>
+</SafeAreaView> */}

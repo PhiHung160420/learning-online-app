@@ -1,11 +1,14 @@
-import { IconLabelButton, InputField, PrimaryButton, TextButton } from 'components/common';
+import { Container, IconLabelButton, InputField, PrimaryButton, TextButton } from 'components/common';
+import { navigate } from 'navigation/service';
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import colors from 'utils/colors';
 import { fonts } from 'utils/fonts';
 import icons from 'utils/icons';
 import images from 'utils/images';
 import I18n from 'utils/language/i18n';
+import screenNames from 'utils/screenName';
 import { fontWeights, sizes } from 'utils/sizes';
 
 interface IProps {
@@ -27,18 +30,20 @@ const LoginComponent = (props: IProps) => {
     onPressSignup
   } = props;
 
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
+    <Container containerStyle={styles.container}>
       <View style={styles.background}>
         <ImageBackground 
           source={images.bg}
-          imageStyle={styles.bgImage}
+          imageStyle={[styles.bgImage, {marginTop: -insets.top}]}
         >
           <Text style={styles.header}>{I18n.t('LOGIN_HEADER')}</Text>
         </ImageBackground>
       </View>
 
-      <View style={styles.content}>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Email */}
         <InputField 
           label={I18n.t('LOGIN_TEXTFIELD_1')}
@@ -92,18 +97,17 @@ const LoginComponent = (props: IProps) => {
             label={I18n.t('LOGIN_SIGN_UP')}
             buttonStyle={styles.signupButton}
             labelStyle={styles.signupLabel}
-            onPress={() => {}}
+            onPress={() => navigate(screenNames.REGISTER)}
           />
         </View>
-      </View>
-    </View>
+      </ScrollView>
+    </Container>
   )
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: colors.white
+    paddingHorizontal: 0,
   },
   content: {
     paddingHorizontal: sizes.padding
@@ -114,7 +118,6 @@ const styles = StyleSheet.create({
   header: {
     ...fonts.h1,
     textAlign: 'center',
-    marginTop: sizes.size_50
   },
   bgImage: {
     width: '100%',

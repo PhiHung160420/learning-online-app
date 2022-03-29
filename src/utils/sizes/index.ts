@@ -156,6 +156,7 @@ export const sizes = {
 	size_147: size(147),
 	size_150: size(150),
 	size_155: size(155),
+	size_160: size(160),
 	size_165: size(165),
 	size_170: size(170),
 	size_172: size(172),

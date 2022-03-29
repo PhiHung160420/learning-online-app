@@ -29,7 +29,7 @@ const InputField = (props: IProps) => {
     onChangeValue
   } = props;
 
-  const [secureTextEntry, setSecureTextEntry] = useState(false);
+  const [secureTextEntry, setSecureTextEntry] = useState(true);
 
   return (
     <View style={containerStyle}>
