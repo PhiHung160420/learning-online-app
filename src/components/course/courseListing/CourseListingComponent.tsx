@@ -16,9 +16,10 @@ interface IProps {
   onSelectedClassLevel: (value: number) => void,
   sltCreateWithin: number,
   onSelectedCreateWithIn: (value: number) => void,
+  onClickCourseDetail: (courseId: any) => void
 };
 
-const CourseComponent = (props: IProps) => {
+const CourseListingComponent = (props: IProps) => {
   const {
     category,
     sltClassType,
@@ -26,7 +27,8 @@ const CourseComponent = (props: IProps) => {
     sltCreateWithin,
     onSelectedClassType,
     onSelectedClassLevel,
-    onSelectedCreateWithIn
+    onSelectedCreateWithIn,
+    onClickCourseDetail
   } = props;
   const appTheme = useAppSelector(state => state?.theme?.appTheme);
 
@@ -104,6 +106,7 @@ const CourseComponent = (props: IProps) => {
         flatlistRef={flatlistRef} 
         onScroll={onScroll}
         onPressFilterButton={onPressFilterButton}
+        onClickCourseDetail={onClickCourseDetail}
       />
 
       <FilterModal 
@@ -128,4 +131,4 @@ const styles = (appTheme?: any) => StyleSheet.create({
   },
 });
 
-export default CourseComponent
+export default CourseListingComponent

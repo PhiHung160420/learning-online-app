@@ -1,7 +1,10 @@
-import { CourseComponent } from 'components'
-import React, { useState } from 'react'
 
-const CourseScreen = (props: any) => {
+import { CourseListingComponent } from 'components';
+import { navigate } from 'navigation/service';
+import React, { useState } from 'react'
+import screenNames from 'utils/screenName';
+
+const CourseListingScreen = (props: any) => {
   const category = props.route?.params || '';
   const [sltClassType, setSltClassType] = useState(-1);
   const [sltClassLevel, setSltClassLevel] = useState(-1);
@@ -19,8 +22,12 @@ const CourseScreen = (props: any) => {
     setSltCreateWithin(create);
   };
 
+  const onClickCourseDetail = (course: any) => {
+    navigate(screenNames.COURSE_DETAIL, course);
+  };
+
   return (
-    <CourseComponent 
+    <CourseListingComponent 
       category={category} 
       sltClassType={sltClassType}
       onSelectedClassType={onSelectedClassType}
@@ -28,8 +35,9 @@ const CourseScreen = (props: any) => {
       onSelectedClassLevel={onSelectedClassLevel}
       sltCreateWithin={sltCreateWithin}
       onSelectedCreateWithIn={onSelectedCreateWithIn}
+      onClickCourseDetail={onClickCourseDetail}
     />
   )
 }
 
-export default CourseScreen;
+export default CourseListingScreen;

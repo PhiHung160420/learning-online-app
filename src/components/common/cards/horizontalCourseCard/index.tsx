@@ -1,78 +1,95 @@
+import { IconText } from 'components/common';
 import React from 'react';
-import { ImageBackground, Text, View } from 'react-native';
-import { Image, StyleProp, StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
-import colors from 'utils/colors';
-import { sizes } from 'utils/sizes';
-import {IconButton, IconText} from 'components/common';
-import icons from 'utils/icons';
-import { fonts } from 'utils/fonts';
-import data from 'utils/data';
+import {
+  Image, ImageBackground, StyleProp,
+  StyleSheet, Text, TouchableOpacity, View, ViewStyle
+} from 'react-native';
 import { useAppSelector } from 'store';
+import colors from 'utils/colors';
+import { fonts } from 'utils/fonts';
+import icons from 'utils/icons';
+import images from 'utils/images';
+import { sizes } from 'utils/sizes';
 
 export interface IPopularCourseData {
-  id: number,
-  title: string,
-  duration: string,
-  instructor: string,
-  ratings: number,
-  price: number,
-  is_favourite: boolean,
-  thumbnail: any
+  id: number;
+  title: string;
+  duration: string;
+  instructor: string;
+  ratings: number;
+  price: number;
+  is_favourite: boolean;
+  thumbnail: any;
 }
 
 interface IProps {
-  containerStyle?: StyleProp<ViewStyle>,
-  course: IPopularCourseData,
-  index?: number
-};
+  containerStyle?: StyleProp<ViewStyle>;
+  course: IPopularCourseData;
+  index?: number;
+  onPress: (courseId: any) => void;
+}
 
-const HorizontalCoursesCard = ({containerStyle, course, index}: IProps) => {
-  const id = course.id || 0;
-  const title = course.title || '';
-  const duration = course.duration || '';
-  const instructor = course.instructor || '';
-  const ratings = course.ratings || 0;
-  const price = course.price || 0;
-  const is_favourite = course.is_favourite || false;
-  const thumbnail = course.thumbnail || '';
+const HorizontalCoursesCard = ({
+  containerStyle,
+  course,
+  index,
+  onPress,
+}: IProps) => {
+  const title = course?.title || '';
+  const duration = course?.duration || '';
+  const instructor = course?.instructor || '';
+  const ratings = course?.ratings || 0;
+  const price = course?.price || 0;
+  const is_favourite = course?.is_favourite || false;
+  const thumbnail = course?.thumbnail || images.thubnailDefault;
 
   const appTheme = useAppSelector(state => state?.theme?.appTheme);
 
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={[
-        styles.container, 
-        containerStyle, 
+        styles.container,
+        containerStyle,
         {
-          marginTop: index === 0 ? sizes.radius : sizes.padding
-        }
+          marginTop: index === 0 ? sizes.radius : sizes.padding,
+        },
       ]}
-    >
-      <ImageBackground 
+      onPress={() => onPress(course)}>
+      <ImageBackground
         source={thumbnail}
         resizeMode="cover"
         style={styles.background}
-        imageStyle={styles.image}
-      >
+        imageStyle={styles.image}>
         {/* favorite icon */}
         <View style={styles.iconContainer}>
           <Image
-            resizeMode='contain'
-            source={icons.favourite} 
-            style={[styles.iconStyle, {tintColor: is_favourite ? colors.secondary : colors.additionalColor4}]}
+            resizeMode="contain"
+            source={icons.favourite}
+            style={[
+              styles.iconStyle,
+              {
+                tintColor: is_favourite
+                  ? colors.secondary
+                  : colors.additionalColor4,
+              },
+            ]}
           />
         </View>
       </ImageBackground>
 
       {/* Detail */}
       <View style={styles.detail}>
-        <Text style={[styles.title, {color: appTheme?.textColor}]}>{title}</Text>
+        <Text style={[styles.title, {color: appTheme?.textColor}]}>
+          {title}
+        </Text>
 
         <View style={styles.info}>
-          <Text style={[styles.instructor, {color: appTheme?.textColor}]}>{instructor}</Text>
+          <Text style={[styles.instructor, {color: appTheme?.textColor}]}>
+            {instructor}
+          </Text>
 
-          <IconText 
-            icon={icons.time} 
+          <IconText
+            icon={icons.time}
             label={duration}
             containerStyle={styles.timeText}
             iconStyle={styles.timeIconStyle}
@@ -83,8 +100,8 @@ const HorizontalCoursesCard = ({containerStyle, course, index}: IProps) => {
         <View style={styles.priceAndRating}>
           <Text style={styles.price}>${price.toFixed(2)}</Text>
 
-          <IconText 
-            icon={icons.star} 
+          <IconText
+            icon={icons.star}
             label={ratings.toString()}
             containerStyle={styles.ratingText}
             iconStyle={styles.ratingIconStyle}
@@ -93,13 +110,13 @@ const HorizontalCoursesCard = ({containerStyle, course, index}: IProps) => {
         </View>
       </View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   background: {
     width: sizes.size_130,
@@ -107,7 +124,7 @@ const styles = StyleSheet.create({
     marginBottom: sizes.radius,
   },
   image: {
-    borderRadius: sizes.radius
+    borderRadius: sizes.radius,
   },
   iconContainer: {
     position: 'absolute',
@@ -118,7 +135,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: sizes.size_5,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
   iconStyle: {
     width: sizes.size_20,
@@ -126,52 +143,52 @@ const styles = StyleSheet.create({
   },
   detail: {
     flex: 1,
-    marginLeft: sizes.padding
+    marginLeft: sizes.padding,
   },
   title: {
     ...fonts.h3,
-    fontSize: sizes.size_18
+    fontSize: sizes.size_18,
   },
   info: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: sizes.base
+    marginTop: sizes.base,
   },
   instructor: {
-    ...fonts.body3
+    ...fonts.body3,
   },
   timeText: {
-    marginLeft: sizes.base
+    marginLeft: sizes.base,
   },
   timeIconStyle: {
     width: sizes.size_15,
-    height: sizes.size_15
+    height: sizes.size_15,
   },
   timeLabelStyle: {
-    ...fonts.body4
+    ...fonts.body4,
   },
   priceAndRating: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: sizes.base
+    marginTop: sizes.base,
   },
   price: {
     ...fonts.h2,
-    color: colors.primary
+    color: colors.primary,
   },
   ratingText: {
-    marginLeft: sizes.base
+    marginLeft: sizes.base,
   },
   ratingIconStyle: {
     width: sizes.size_15,
     height: sizes.size_15,
-    tintColor: colors.primary2
+    tintColor: colors.primary2,
   },
   ratingLabelStyle: {
     marginLeft: sizes.size_5,
     color: colors.black,
-    ...fonts.h3
-  }
+    ...fonts.h3,
+  },
 });
 
-export default HorizontalCoursesCard
+export default HorizontalCoursesCard;

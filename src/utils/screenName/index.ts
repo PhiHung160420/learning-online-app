@@ -4,8 +4,11 @@ const screenNames = {
   // Layout
   LAYOUT_SCREEN: 'LAYOUT_SCREEN',
 
-  // Course
-  COURSE_SCREEN: 'COURSE_SCREEN'
+  // Course Listing
+  COURSE_LISTING_SCREEN: 'COURSE_LISTING_SCREEN',
+
+  //Course Detail
+  COURSE_DETAIL: 'COURSE_DETAIL'
 };
 
 export default screenNames;

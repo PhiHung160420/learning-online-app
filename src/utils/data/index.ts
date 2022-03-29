@@ -156,8 +156,8 @@ const course_details = {
   number_of_students: "33.5k Students",
   duration: "2h 30m",
   instructor: {
-      name: "ByProgrammers",
-      title: "Full Stack Programmer"
+      name: "Phan Phi Hung",
+      title: "Mobile Developer"
   },
   videos: [
       {
@@ -174,7 +174,7 @@ const course_details = {
           title: "2. User Interface",
           duration: "1:15:00",
           size: "200 MB",
-          progress: "100%",
+          progress: "50%",
           is_playing: true,
           is_complete: false,
           is_lock: false,
@@ -359,7 +359,9 @@ const notificationByDays = [
       ],
 
   },
-]
+];
+
+const video_default = 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4';
 
 export default {
   categories,
@@ -368,5 +370,6 @@ export default {
   top_searches,
   course_details,
   notificationByDays,
-  profile
+  profile,
+  video_default
 }

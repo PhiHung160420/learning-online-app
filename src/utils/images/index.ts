@@ -23,6 +23,8 @@ const images = {
   thumbnail_3 : require("../../../assets/images/thumbnail_3.png"),
   thumbnail_4 : require("../../../assets/images/thumbnail_4.png"),
   loadingImage : require("../../../assets/images/loading-image.gif"),
+  thubnailDefault: require("../../../assets/images/thumbnail_default.jpg"),
+  video_default_url: require("../../../assets/images/big_buck_bunny.mp4"),
 };
 
 export default images;

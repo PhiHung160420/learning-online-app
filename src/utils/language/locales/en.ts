@@ -41,9 +41,24 @@ export default {
 	FILTER_MODAL_HEADER: 'Filter',
 	FILTER_MODAL_CANCEL: 'Cancel',
 	FILTER_MODAL_CLASS_TYPE: 'Class Type',
-	FILTER_MODAL_CLASS_LEVEL: 'Class Level',
+	FILTER_MODAL_CLASS_LEVEL: 'Class Level', 
 	FILTER_MODAL_CREATED_WITHIN: 'Created Within',
 	FILTER_MODAL_CLASS_LENGTH: 'Class Length',
 	FILTER_MODAL_RESET: 'Reset',
-	FILTER_MODAL_APPLY: 'Apply'
+	FILTER_MODAL_APPLY: 'Apply',
+
+	// Course Chapter
+	COURSE_CHAPTER_FOLLOW: 'Follow',
+	COURSE_CHAPTER_POPULAR_COURSE: 'Popular Course',
+	COURSE_CHAPTER_SEE_ALL: 'See All',
+
+	// Course Files
+	COURSE_FILES_STUDENTS: 'Students',
+	COURSE_FILES: 'Files',
+
+	// Course Discussions
+	COURSE_DISCUSSIONS: 'Course Discussions',
+	COURSE_DISCUSSIONS_REPLY: 'Reply',
+	COURSE_DISCUSSIONS_LIKE: 'Like',
+	COURSE_DISCUSSIONS_PLACEHOLDER: 'Type Something'
 }

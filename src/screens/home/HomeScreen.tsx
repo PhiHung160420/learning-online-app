@@ -5,7 +5,7 @@ import screenNames from 'utils/screenName';
 
 const HomeScreen = () => {
   const onPressCategoryCard = (category: any) => {
-    navigate(screenNames.COURSE_SCREEN, category);
+    navigate(screenNames.COURSE_LISTING_SCREEN, category);
   };
   return <HomeComponent onPressCategoryCard={onPressCategoryCard}/>;
 };

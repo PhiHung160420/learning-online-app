@@ -16,13 +16,15 @@ interface IProps {
   flatlistRef?: any,
   onScroll?: any,
   onPressFilterButton: () => void,
+  onClickCourseDetail: (courseId: any) => void
 }
 
 const ListingCourses = (props: IProps) => {
   const {
     flatlistRef, 
     onScroll, 
-    onPressFilterButton
+    onPressFilterButton,
+    onClickCourseDetail
   } = props;
 
   const listHeaderComponent = () => (
@@ -54,6 +56,7 @@ const ListingCourses = (props: IProps) => {
               course={item} 
               containerStyle={styles.courseCard} 
               index={index}
+              onPress={onClickCourseDetail}
             />
           )
         }}
