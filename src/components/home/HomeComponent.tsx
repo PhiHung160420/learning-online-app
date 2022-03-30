@@ -1,4 +1,5 @@
 import { Container, LargeCard, Section, CategoryCard, TextButton, VerticalCourseCard, LineDivider, HorizontalCoursesCard } from 'components/common';
+import { navigate } from 'navigation/service';
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
@@ -9,13 +10,15 @@ import { fonts } from 'utils/fonts';
 import icons from 'utils/icons';
 import images from 'utils/images';
 import I18n from 'utils/language/i18n';
+import screenNames from 'utils/screenName';
 import { sizes } from 'utils/sizes';
 
 interface IProps {
   onPressCategoryCard: (category: any) => void,
+  onPressCourseDetail: (course: any) => void,
 }
 
-const HomeComponent = ({onPressCategoryCard}: IProps) => {
+const HomeComponent = ({onPressCategoryCard, onPressCourseDetail}: IProps) => {
   return (
     <Container
       isHeader
@@ -70,10 +73,10 @@ const HomeComponent = ({onPressCategoryCard}: IProps) => {
 
         {/* Categories */}
         <Section 
-            title={I18n.t('HOME_SCREEN_CATEGORIES')}
-            onPress={() =>  {}}
-            button={I18n.t('HOME_SCREEN_SEE_ALL_BUTTON')}
-          >
+          title={I18n.t('HOME_SCREEN_CATEGORIES')}
+          onPress={() => navigate(screenNames.CATEGORIES_SCREEN)}
+          button={I18n.t('HOME_SCREEN_SEE_ALL_BUTTON')}
+        >
           <FlatList 
             horizontal
             data={data.categories}
@@ -114,6 +117,7 @@ const HomeComponent = ({onPressCategoryCard}: IProps) => {
                 course={item} 
                 containerStyle={styles.horizontalCard}
                 index={index}
+                onPress={() =>onPressCourseDetail(item)}
               />
             )}
             ItemSeparatorComponent={() => (

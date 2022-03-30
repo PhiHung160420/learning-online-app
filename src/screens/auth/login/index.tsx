@@ -12,7 +12,7 @@ const LoginScreen = () => {
   };
 
   const onPressSignup = () => {
-    navigate(screenNames.REGISTER);
+    navigate(screenNames.REGISTER_SCREEN);
   };
 
   return (

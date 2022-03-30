@@ -15,6 +15,8 @@ interface IContainer {
   headerStyle?: StyleProp<ViewStyle>,
   headerTitleStyle?: StyleProp<TextStyle>,
   isKeyboardOverlay?: boolean,
+  isBackButton?: boolean,
+  backButtonStyle?: StyleProp<ViewStyle>,
   onPressHeaderIcon?: () => void,
 }
 
@@ -29,6 +31,8 @@ const Container = (props: IContainer) => {
     headerStyle,
     headerTitleStyle,
     isKeyboardOverlay = false,
+    isBackButton,
+    backButtonStyle,
     onPressHeaderIcon
   } = props;
 
@@ -52,6 +56,8 @@ const Container = (props: IContainer) => {
                     icon={headerIcon}
                     style={headerStyle}
                     headerTitleStyle={headerTitleStyle}
+                    isBackButton={isBackButton}
+                    backButtonStyle={backButtonStyle}
                     onPress={onPressHeaderIcon}
                   />}
                 <View style={[styles().content, containerStyle]}>
@@ -69,6 +75,8 @@ const Container = (props: IContainer) => {
                   icon={headerIcon}
                   style={headerStyle}
                   headerTitleStyle={headerTitleStyle}
+                  isBackButton={isBackButton}
+                  backButtonStyle={backButtonStyle}
                   onPress={onPressHeaderIcon}
                 />}
               <View style={[styles().content, containerStyle]}>

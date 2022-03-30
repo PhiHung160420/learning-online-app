@@ -7,6 +7,8 @@ import CoursDetailComponent from './course/courseDetail/CoursDetailComponent';
 import LoginComponent from './auth/login/LoginComponent';
 import RegisterComponent from './auth/register/RegisterComponent';
 import LandingComponent from "components/landing/LandingComponent";
+import CategoriesComponent from './categories/CategoriesComponent';
+import PopularCoursesComponent from './course/popularCourses/PopularCoursesComponent';
 
 export {
   HomeComponent,
@@ -17,5 +19,7 @@ export {
   CoursDetailComponent,
   LoginComponent,
   RegisterComponent,
-  LandingComponent
+  LandingComponent,
+  CategoriesComponent,
+  PopularCoursesComponent
 };

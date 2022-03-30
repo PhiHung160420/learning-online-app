@@ -9,13 +9,19 @@ const screenNames = {
   COURSE_LISTING_SCREEN: 'COURSE_LISTING_SCREEN',
 
   //Course Detail
-  COURSE_DETAIL: 'COURSE_DETAIL',
+  COURSE_DETAIL_SCREEN: 'COURSE_DETAIL',
 
   // Login
-  LOGIN: 'LOGIN',
+  LOGIN_SCREEN: 'LOGIN',
 
   // Register
-  REGISTER: 'REGISTER'
+  REGISTER_SCREEN: 'REGISTER',
+
+  // Categories
+  CATEGORIES_SCREEN: 'CATEGORIES',
+
+  // Popular Courses
+  POPULAR_COURSES_SCREEN: 'POPULAR_COURSES_SCREEN'
 };
 
 export default screenNames;

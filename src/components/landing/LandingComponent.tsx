@@ -22,7 +22,7 @@ const LandingComponent = () => {
         primary
         containerStyle={styles.button}
         title={I18n.t('LANDING_GET_STARTED')}
-        onPress={() => navigate(screenNames.REGISTER)}
+        onPress={() => navigate(screenNames.REGISTER_SCREEN)}
       />
     </Container>
   )

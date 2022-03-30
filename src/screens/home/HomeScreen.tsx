@@ -7,7 +7,16 @@ const HomeScreen = () => {
   const onPressCategoryCard = (category: any) => {
     navigate(screenNames.COURSE_LISTING_SCREEN, category);
   };
-  return <HomeComponent onPressCategoryCard={onPressCategoryCard}/>;
+
+  const onPressCourseDetail = (course: any) => {
+    navigate(screenNames.COURSE_DETAIL_SCREEN, course);
+  };
+  return (
+    <HomeComponent 
+      onPressCategoryCard={onPressCategoryCard}
+      onPressCourseDetail={onPressCourseDetail}
+    />
+  )
 };
 
 export default HomeScreen;

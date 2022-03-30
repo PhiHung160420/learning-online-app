@@ -26,7 +26,7 @@ interface IProps {
   containerStyle?: StyleProp<ViewStyle>;
   course: IPopularCourseData;
   index?: number;
-  onPress: (courseId: any) => void;
+  onPress: () => void;
 }
 
 const HorizontalCoursesCard = ({
@@ -54,7 +54,7 @@ const HorizontalCoursesCard = ({
           marginTop: index === 0 ? sizes.radius : sizes.padding,
         },
       ]}
-      onPress={() => onPress(course)}>
+      onPress={onPress}>
       <ImageBackground
         source={thumbnail}
         resizeMode="cover"

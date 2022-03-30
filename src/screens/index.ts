@@ -7,6 +7,8 @@ import CourseDetailScreen from "./course/courseDetail/CourseDetailScreen";
 import LoginScreen from "./auth/login";
 import RegisterScreen from "./auth/register";
 import LandingScreen from "./landing/LandingScreen";
+import CategoriesScreen from "./categories/CategoriesScreen";
+import PopularCoursesScreen from "./course/popularCourses/PopularCoursesScreen";
 
 export {
   HomeScreen,
@@ -17,5 +19,7 @@ export {
   CourseDetailScreen,
   LoginScreen,
   RegisterScreen,
-  LandingScreen
+  LandingScreen,
+  CategoriesScreen,
+  PopularCoursesScreen
 }

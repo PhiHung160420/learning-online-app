@@ -97,7 +97,7 @@ const LoginComponent = (props: IProps) => {
             label={I18n.t('LOGIN_SIGN_UP')}
             buttonStyle={styles.signupButton}
             labelStyle={styles.signupLabel}
-            onPress={() => navigate(screenNames.REGISTER)}
+            onPress={() => navigate(screenNames.REGISTER_SCREEN)}
           />
         </View>
       </ScrollView>

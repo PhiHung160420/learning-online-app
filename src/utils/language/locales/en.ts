@@ -90,5 +90,13 @@ export default {
 	REGISTER_LOGIN_BUTTON: 'Login',
 	REGISTER_STUDENT: 'STUDENT',
 	REGISTER_TUTOR: 'TUTOR',
-	REGISTER_I_AM_A: 'I am a'
+	REGISTER_I_AM_A: 'I am a',
+
+	// Categories Screen
+	CATEGORIES_SCREEN_TITLE: 'Categories',
+	CATEGORIES_SCREEN_SUBTITLE: 'All Categories',
+
+	// Popular Courses Screen
+	POPULAR_COURSES_TITLE: 'Popular Courses',
+	POPULAR_COURSES_SUBTITLE: 'All Courses'
 }

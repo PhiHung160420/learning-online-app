@@ -10,96 +10,15 @@ import images from 'utils/images';
 import I18n from 'utils/language/i18n';
 import { sizes } from 'utils/sizes';
 
-const renderchapter = () => {
-  return (
-    <View>
-      {data?.course_details?.videos.map((item, index) => {
-        return (
-          <TouchableOpacity
-            key={renderKeyItem('Videos', index)}
-            disabled={!item?.is_playing}
-            style={[styles.chaptersComponent, {backgroundColor: item?.is_playing ? colors.additionalColor11 : colors.transparent}]}
-          >
-            <View style={styles.chapter}>
-              <Image 
-                source={item?.is_complete ? icons.completed : item?.is_playing ? icons.play_1 : icons.lock}
-                style={styles.completeIcon}
-              />
-
-              <View style={styles.chapterContent}>
-                <Text style={{...fonts.h3}}>{item?.title}</Text>
-                <Text style={styles.chapterDuration}>{item?.duration}</Text>
-              </View>
-
-              <View style={styles.flexRow}>
-                <Text style={styles.chapterSize}>{item?.size}</Text>
-
-                <IconButton 
-                  icon={item?.is_downloaded ? icons.completed : icons.download}
-                  disabled={!item?.is_complete}
-                  containerStyle={styles.downloadIcon}
-                  iconStyle={{tintColor: item?.is_lock ? colors.additionalColor4 : item?.is_downloaded ? colors.primary : colors.black}}
-                  onPress={() => {}}
-                />
-              </View>
-            </View>
-
-            {/* Progress Bar */}
-            {item?.is_playing && (
-              <View style={[styles.progressBar, {width: item?.progress}]} />
-            )}
-          </TouchableOpacity>
-        )
-      })}
-    </View>
-  )
-};
-
-const renderPopularCourse = () => {
-  return (
-    <View style={styles.popularCourse}>
-      <View style={styles.popularHeader}>
-        <Text style={styles.popularTitle}>{I18n.t('COURSE_CHAPTER_POPULAR_COURSE')}</Text>
-
-        <TextButton
-          buttonStyle={styles.popularButton}
-          label={I18n.t('COURSE_CHAPTER_SEE_ALL')}
-          onPress={() => {}}
-        />
-      </View>
-
-      <FlatList 
-        data={data?.courses_list_2}
-        listKey="PopularCourses"
-        scrollEnabled={false}
-        keyExtractor={item => renderKeyItem('PopularCourse', item.id)}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.popularCourseList}
-        renderItem={({item, index}) => (
-          <HorizontalCoursesCard 
-            course={item}
-            containerStyle={[styles.popularCourseCard]}
-            onPress={() => {}}
-          />
-        )}
-        ItemSeparatorComponent={() => (
-          <LineDivider />
-        )}
-      />
-    </View>
-  )
-}
-
 const CourseChapters = () => {
-  return (
-    <ScrollView>
-      {/* Header */}
+  const renderHeader = () => {
+    return (
       <View style={styles.header}>
         <Text style={styles.headerTitle}>{data?.course_details?.title}</Text>
-
+  
         <View style={styles.marginTop}>
           <Text style={{...fonts.body4}}>{data?.course_details?.number_of_students}</Text>
-
+  
           <IconText 
             icon={icons.time} 
             label={data?.course_details?.duration} 
@@ -108,7 +27,7 @@ const CourseChapters = () => {
             containerStyle={styles.timeIcon}
           />
         </View>
-
+  
         <View style={styles.instructor}>
           <ChapterCard 
             image={images.profile}
@@ -117,6 +36,93 @@ const CourseChapters = () => {
           />
         </View>
       </View>
+    )
+  };
+  
+  const renderchapter = () => {
+    return (
+      <View>
+        {data?.course_details?.videos.map((item, index) => {
+          return (
+            <TouchableOpacity
+              key={renderKeyItem('Videos', index)}
+              disabled={!item?.is_playing}
+              style={[styles.chaptersComponent, {backgroundColor: item?.is_playing ? colors.additionalColor11 : colors.transparent}]}
+            >
+              <View style={styles.chapter}>
+                <Image 
+                  source={item?.is_complete ? icons.completed : item?.is_playing ? icons.play_1 : icons.lock}
+                  style={styles.completeIcon}
+                />
+  
+                <View style={styles.chapterContent}>
+                  <Text style={{...fonts.h3}}>{item?.title}</Text>
+                  <Text style={styles.chapterDuration}>{item?.duration}</Text>
+                </View>
+  
+                <View style={styles.flexRow}>
+                  <Text style={styles.chapterSize}>{item?.size}</Text>
+  
+                  <IconButton 
+                    icon={item?.is_downloaded ? icons.completed : icons.download}
+                    disabled={!item?.is_complete}
+                    containerStyle={styles.downloadIcon}
+                    iconStyle={{tintColor: item?.is_lock ? colors.additionalColor4 : item?.is_downloaded ? colors.primary : colors.black}}
+                    onPress={() => {}}
+                  />
+                </View>
+              </View>
+  
+              {/* Progress Bar */}
+              {item?.is_playing && (
+                <View style={[styles.progressBar, {width: item?.progress}]} />
+              )}
+            </TouchableOpacity>
+          )
+        })}
+      </View>
+    )
+  };
+  
+  const renderPopularCourse = () => {
+    return (
+      <View style={styles.popularCourse}>
+        <View style={styles.popularHeader}>
+          <Text style={styles.popularTitle}>{I18n.t('COURSE_CHAPTER_POPULAR_COURSE')}</Text>
+  
+          <TextButton
+            buttonStyle={styles.popularButton}
+            label={I18n.t('COURSE_CHAPTER_SEE_ALL')}
+            onPress={() => {}}
+          />
+        </View>
+  
+        <FlatList 
+          data={data?.courses_list_2}
+          listKey="PopularCourses"
+          scrollEnabled={false}
+          keyExtractor={item => renderKeyItem('PopularCourse', item.id)}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.popularCourseList}
+          renderItem={({item, index}) => (
+            <HorizontalCoursesCard 
+              course={item}
+              containerStyle={[styles.popularCourseCard]}
+              onPress={() => {}}
+            />
+          )}
+          ItemSeparatorComponent={() => (
+            <LineDivider />
+          )}
+        />
+      </View>
+    )
+  }
+
+  return (
+    <ScrollView>
+      {/* Header */}
+      {renderHeader()}
 
       {/* Line Divider */}
       <LineDivider lineStyle={styles.lineDivider}/> 

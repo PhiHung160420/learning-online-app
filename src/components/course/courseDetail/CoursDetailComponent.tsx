@@ -10,9 +10,8 @@ interface IProps {
 }
 
 const CoursDetailComponent = (props: IProps) => {
-  const {
-    course
-  } = props;
+  const {course} = props;
+  console.log('course: ', course);
 
   const [playVideo, setPlayVideo] = useState(false);
   const flatlistRef = useRef<FlatList>(null);

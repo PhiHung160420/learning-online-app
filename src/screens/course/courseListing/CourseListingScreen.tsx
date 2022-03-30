@@ -23,7 +23,7 @@ const CourseListingScreen = (props: any) => {
   };
 
   const onClickCourseDetail = (course: any) => {
-    navigate(screenNames.COURSE_DETAIL, course);
+    navigate(screenNames.COURSE_DETAIL_SCREEN, course);
   };
 
   return (

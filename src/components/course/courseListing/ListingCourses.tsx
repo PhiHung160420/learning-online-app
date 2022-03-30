@@ -56,7 +56,7 @@ const ListingCourses = (props: IProps) => {
               course={item} 
               containerStyle={styles.courseCard} 
               index={index}
-              onPress={onClickCourseDetail}
+              onPress={() => onClickCourseDetail(item)}
             />
           )
         }}
