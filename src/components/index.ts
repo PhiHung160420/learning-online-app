@@ -1,7 +1,7 @@
 import HomeComponent from './home/HomeComponent';
 import LayoutComponent from './layout/LayoutComponent';
 import SearchComponent from './search/SearchComponent';
-import ProfileComponent from './profile/ProfileComponent';
+import MyProfileComponent from './profile/myProfile/MyProfileComponent';
 import CourseListingComponent from './course/courseListing/CourseListingComponent';
 import CoursDetailComponent from './course/courseDetail/CoursDetailComponent';
 import LoginComponent from './auth/login/LoginComponent';
@@ -10,12 +10,13 @@ import LandingComponent from "components/landing/LandingComponent";
 import CategoriesComponent from './categories/CategoriesComponent';
 import PopularCoursesComponent from './course/popularCourses/PopularCoursesComponent';
 import NotificationsComponent from './notifications/NotificationsComponent';
+import InstructorProfileComponent from './profile/instructorProfile/InstructorProfileComponent';
 
 export {
   HomeComponent,
   LayoutComponent,
   SearchComponent,
-  ProfileComponent,
+  MyProfileComponent,
   CourseListingComponent,
   CoursDetailComponent,
   LoginComponent,
@@ -23,5 +24,6 @@ export {
   LandingComponent,
   CategoriesComponent,
   PopularCoursesComponent,
-  NotificationsComponent
+  NotificationsComponent,
+  InstructorProfileComponent
 };

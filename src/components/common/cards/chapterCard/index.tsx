@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, ImageSourcePropType, Image, Text } from 'react-native';
+import { View, StyleSheet, ImageSourcePropType, Image, Text, TouchableWithoutFeedback } from 'react-native';
 import { fonts } from 'utils/fonts';
 import { sizes } from 'utils/sizes';
 import {TextButton} from 'components/common';
@@ -9,30 +9,35 @@ interface IProps {
   image: ImageSourcePropType,
   name?: string,
   title?: string,
+  onPress: () => void
 }
 
 const ChapterCard = (props: IProps) => {
   const {
     image,
     name,
-    title
+    title,
+    onPress
   } = props;
+
   return (
-    <View style={styles.container}>
-      <Image source={image} style={styles.image}/>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.container}>
+        <Image source={image} style={styles.image}/>
 
-      <View style={styles.content}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.title}>{title}</Text>
+        <View style={styles.content}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+
+        <TextButton 
+          label={`${I18n.t('COURSE_CHAPTER_FOLLOW')} +`}
+          buttonStyle={styles.button}
+          labelStyle={styles.buttonLabel}
+          onPress={() => {}}
+        />
       </View>
-
-      <TextButton 
-        label={`${I18n.t('COURSE_CHAPTER_FOLLOW')} +`}
-        buttonStyle={styles.button}
-        labelStyle={styles.buttonLabel}
-        onPress={() => {}}
-      />
-    </View>
+    </TouchableWithoutFeedback>
   )
 };
 

@@ -1,4 +1,5 @@
 import { ChapterCard, HorizontalCoursesCard, IconButton, IconText, LineDivider, TextButton } from 'components/common';
+import { navigate } from 'navigation/service';
 import React from 'react'
 import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import colors from 'utils/colors';
@@ -8,6 +9,7 @@ import { fonts } from 'utils/fonts';
 import icons from 'utils/icons';
 import images from 'utils/images';
 import I18n from 'utils/language/i18n';
+import screenNames from 'utils/screenName';
 import { sizes } from 'utils/sizes';
 
 const CourseChapters = () => {
@@ -33,6 +35,7 @@ const CourseChapters = () => {
             image={images.profile}
             name={data?.course_details?.instructor?.name}
             title={data?.course_details?.instructor?.title}
+            onPress={() => navigate(screenNames.INSTRUCTOR_PROFILE_SCREEN)}
           />
         </View>
       </View>

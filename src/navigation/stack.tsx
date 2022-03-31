@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { CategoriesScreen, CourseDetailScreen, CourseListingScreen, LandingScreen, LayoutScreen, LoginScreen, NotificationsScreen, PopularCoursesScreen, RegisterScreen } from 'screens';
+import { CategoriesScreen, CourseDetailScreen, CourseListingScreen, InstructorProfileScreen, LandingScreen, LayoutScreen, LoginScreen, NotificationsScreen, PopularCoursesScreen, RegisterScreen } from 'screens';
 import screenNames from 'utils/screenName';
 
 const Stack = createStackNavigator();
@@ -17,6 +17,7 @@ export const RootStack = () => {
       <Stack.Screen name={screenNames.CATEGORIES_SCREEN} component={CategoriesScreen} />
       <Stack.Screen name={screenNames.POPULAR_COURSES_SCREEN} component={PopularCoursesScreen} />
       <Stack.Screen name={screenNames.NOTIFICATIONS_SCREEN} component={NotificationsScreen} />
+      <Stack.Screen name={screenNames.INSTRUCTOR_PROFILE_SCREEN} component={InstructorProfileScreen} />
     </Stack.Navigator>
   );
 };

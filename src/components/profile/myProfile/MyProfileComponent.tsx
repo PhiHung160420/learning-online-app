@@ -18,7 +18,7 @@ interface IProps {
   onToggleTheme: () => void,
 }
 
-const ProfileComponent = (props: IProps) => {
+const MyProfileComponent = (props: IProps) => {
   const {
     newCourseNoti,
     studyReminder,
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ProfileComponent;
+export default MyProfileComponent;

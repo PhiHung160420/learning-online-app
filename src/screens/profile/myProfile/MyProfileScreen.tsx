@@ -1,9 +1,9 @@
-import { ProfileComponent } from 'components';
+import { MyProfileComponent } from 'components';
 import React, { useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'store';
 import { toggleTheme } from 'store/actions/themeAction';
 
-const ProfileScreen = () => {
+const MyProfileScreen = () => {
   const [newCourseNoti, setNewCourseNoti] = useState(false);
   const [studyReminder, setStudyReminder] = useState(false);
   const appTheme = useAppSelector(state => state?.theme?.appTheme);
@@ -25,7 +25,7 @@ const ProfileScreen = () => {
     }
   };
   return (
-    <ProfileComponent 
+    <MyProfileComponent 
       newCourseNoti={newCourseNoti}
       studyReminder={studyReminder}
       onChangeCourseNoti={onChangeCourseNoti}
@@ -35,4 +35,4 @@ const ProfileScreen = () => {
   )
 }
 
-export default ProfileScreen
+export default MyProfileScreen

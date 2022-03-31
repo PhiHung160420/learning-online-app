@@ -2,7 +2,7 @@ import { BottomTabBar } from 'components/common';
 import React, { useCallback, useRef } from 'react';
 import { Animated, FlatList, StyleSheet, View } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
-import { HomeScreen, ProfileScreen, SearchScreen } from 'screens';
+import { HomeScreen, MyProfileScreen, SearchScreen } from 'screens';
 import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import constants from 'utils/constants';
@@ -44,7 +44,7 @@ const LayoutComponent = () => {
             return (
               <View style={styles().layout}>
                 {item.label == constants.screens.home && <HomeScreen />}
-                {item.label == constants.screens.profile && <ProfileScreen />}
+                {item.label == constants.screens.profile && <MyProfileScreen />}
                 {item.label == constants.screens.search && <SearchScreen />}
               </View>
             )

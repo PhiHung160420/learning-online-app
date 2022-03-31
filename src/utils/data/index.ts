@@ -6,6 +6,16 @@ const profile = {
     phone: "+84375616066"
 };
 
+const instructor_profile = {
+    name: 'Phan Phi Hung',
+    title: "Mobile Developer",
+    avatar: require("../../../assets/images/profile.png"),
+    about_me: 'I understand the importance of being interactive and enjoy communicating with others for the benefit of the company.',
+    Followers: '8.8M',
+    Reviews: '1.8k',
+    total_students: '180M'
+};
+
 const categories = [
   {
       id: 0,
@@ -371,5 +381,6 @@ export default {
   course_details,
   notificationByDays,
   profile,
-  video_default
+  video_default,
+  instructor_profile
 }

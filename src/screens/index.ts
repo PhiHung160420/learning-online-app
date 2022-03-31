@@ -1,6 +1,6 @@
 import HomeScreen from "./home/HomeScreen";
 import LayoutScreen from "./layout/LayoutScreen";
-import ProfileScreen from "./profile/ProfileScreen";
+import MyProfileScreen from "./profile/myProfile/MyProfileScreen";
 import SearchScreen from "./search/SearchScreen";
 import CourseListingScreen from "./course/courseListing/CourseListingScreen";
 import CourseDetailScreen from "./course/courseDetail/CourseDetailScreen";
@@ -10,11 +10,12 @@ import LandingScreen from "./landing/LandingScreen";
 import CategoriesScreen from "./categories/CategoriesScreen";
 import PopularCoursesScreen from "./course/popularCourses/PopularCoursesScreen";
 import NotificationsScreen from "./notifications/NotificationsScreen";
+import InstructorProfileScreen from "./profile/instructorProfile/InstructorProfileScreen";
 
 export {
   HomeScreen,
   LayoutScreen,
-  ProfileScreen,
+  MyProfileScreen,
   SearchScreen,
   CourseListingScreen,
   CourseDetailScreen,
@@ -23,5 +24,6 @@ export {
   LandingScreen,
   CategoriesScreen,
   PopularCoursesScreen,
-  NotificationsScreen
+  NotificationsScreen,
+  InstructorProfileScreen
 }

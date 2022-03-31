@@ -42,6 +42,7 @@ const icons = {
   profile : require("../../../assets/icons/profile.png"),
   reminder : require("../../../assets/icons/reminder.png"),
   reply : require("../../../assets/icons/reply.png"),
+  left_arrow : require("../../../assets/icons/left_arrow.png"),
   right_arrow : require("../../../assets/icons/right_arrow.png"),
   search : require("../../../assets/icons/search.png"),
   send : require("../../../assets/icons/send.png"),
@@ -51,6 +52,7 @@ const icons = {
   sun : require("../../../assets/icons/sun.png"),
   time : require("../../../assets/icons/time.png"),
   web_design : require("../../../assets/icons/web_design.png"),
+  info: require("../../../assets/icons/info.png"),
 }
 
 export default icons;
