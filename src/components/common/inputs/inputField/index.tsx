@@ -57,6 +57,7 @@ const InputField = (props: IProps) => {
 const styles = StyleSheet.create({
   label: {
     ...fonts.h3,
+    fontSize: sizes.size_16,
     color: colors.gray30
   },
   input: {

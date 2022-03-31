@@ -53,6 +53,7 @@ const icons = {
   time : require("../../../assets/icons/time.png"),
   web_design : require("../../../assets/icons/web_design.png"),
   info: require("../../../assets/icons/info.png"),
+  logout: require("../../../assets/icons/logout.png"),
 }
 
 export default icons;

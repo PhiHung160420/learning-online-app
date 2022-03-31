@@ -2,6 +2,7 @@ import { HorizontalCoursesCard, IconButton, LineDivider } from 'components/commo
 import React from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
+import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import { renderKeyItem } from 'utils/common';
 import data from 'utils/data';
@@ -27,9 +28,11 @@ const ListingCourses = (props: IProps) => {
     onClickCourseDetail
   } = props;
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   const listHeaderComponent = () => (
     <View style={styles.headerFlatlist}>
-      <Text style={styles.resultText}>{I18n.t('COURSE_SCREEN_RESULTS')}</Text>
+      <Text style={[styles.resultText, {color: appTheme?.textColor}]}>{I18n.t('COURSE_SCREEN_RESULTS')}</Text>
       <IconButton 
         icon={icons.filter}
         iconStyle={styles.filterIcon}

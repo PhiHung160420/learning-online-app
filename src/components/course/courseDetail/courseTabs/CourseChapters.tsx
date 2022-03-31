@@ -2,6 +2,7 @@ import { ChapterCard, HorizontalCoursesCard, IconButton, IconText, LineDivider, 
 import { navigate } from 'navigation/service';
 import React from 'react'
 import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import { renderKeyItem } from 'utils/common';
 import data from 'utils/data';
@@ -13,13 +14,15 @@ import screenNames from 'utils/screenName';
 import { sizes } from 'utils/sizes';
 
 const CourseChapters = () => {
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   const renderHeader = () => {
     return (
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{data?.course_details?.title}</Text>
+        <Text style={[styles.headerTitle, {color: appTheme?.textColor}]}>{data?.course_details?.title}</Text>
   
         <View style={styles.marginTop}>
-          <Text style={{...fonts.body4}}>{data?.course_details?.number_of_students}</Text>
+          <Text style={{...fonts.body4, color: appTheme?.textColor}}>{data?.course_details?.number_of_students}</Text>
   
           <IconText 
             icon={icons.time} 
@@ -59,7 +62,7 @@ const CourseChapters = () => {
                 />
   
                 <View style={styles.chapterContent}>
-                  <Text style={{...fonts.h3}}>{item?.title}</Text>
+                  <Text style={{...fonts.h3, color: item?.is_playing ? colors.black : appTheme?.textColor}}>{item?.title}</Text>
                   <Text style={styles.chapterDuration}>{item?.duration}</Text>
                 </View>
   
@@ -70,7 +73,7 @@ const CourseChapters = () => {
                     icon={item?.is_downloaded ? icons.completed : icons.download}
                     disabled={!item?.is_complete}
                     containerStyle={styles.downloadIcon}
-                    iconStyle={{tintColor: item?.is_lock ? colors.additionalColor4 : item?.is_downloaded ? colors.primary : colors.black}}
+                    iconStyle={{tintColor: item?.is_lock ? colors.additionalColor4 : item?.is_downloaded ? colors.primary : appTheme?.tintColor}}
                     onPress={() => {}}
                   />
                 </View>
@@ -91,7 +94,7 @@ const CourseChapters = () => {
     return (
       <View style={styles.popularCourse}>
         <View style={styles.popularHeader}>
-          <Text style={styles.popularTitle}>{I18n.t('COURSE_CHAPTER_POPULAR_COURSE')}</Text>
+          <Text style={[styles.popularTitle, {color: appTheme?.textColor}]}>{I18n.t('COURSE_CHAPTER_POPULAR_COURSE')}</Text>
   
           <TextButton
             buttonStyle={styles.popularButton}

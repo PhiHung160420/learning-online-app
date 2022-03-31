@@ -1,9 +1,11 @@
 import { LineDivider, ProfileButton } from 'components/common';
+import { navigate } from 'navigation/service';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import colors from 'utils/colors';
 import icons from 'utils/icons';
 import I18n from 'utils/language/i18n';
+import screenNames from 'utils/screenName';
 import { sizes } from 'utils/sizes';
 
 interface IProps {
@@ -49,6 +51,14 @@ const ProfileSectionSub = (props: IProps) => {
         sltRadioButton={studyReminder}
         onPressRadioButton={() => onChangeStudyReminder(!studyReminder)}
         onPress={() => {}}
+      />
+
+      <LineDivider />
+
+      <ProfileButton 
+        icon={icons.logout}
+        value={I18n.t('PROFILE_SCREEN_FIELD_LOG_OUT')}
+        onPress={() => navigate(screenNames.LOGIN_SCREEN)}
       />
     </View>
   )

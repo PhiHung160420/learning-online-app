@@ -11,7 +11,6 @@ interface IProps {
 
 const CoursDetailComponent = (props: IProps) => {
   const {course} = props;
-  console.log('course: ', course);
 
   const [playVideo, setPlayVideo] = useState(false);
   const flatlistRef = useRef<FlatList>(null);
@@ -41,7 +40,7 @@ const CoursDetailComponent = (props: IProps) => {
 const styles = (appTheme?: any) => StyleSheet.create({
    container: {
      flex: 1,
-     backgroundColor: appTheme?.backgroundColor
+     backgroundColor: appTheme?.backgroundColor1
    },
   
 });

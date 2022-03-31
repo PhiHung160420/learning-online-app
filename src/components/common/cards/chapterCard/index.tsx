@@ -4,6 +4,7 @@ import { fonts } from 'utils/fonts';
 import { sizes } from 'utils/sizes';
 import {TextButton} from 'components/common';
 import I18n from 'utils/language/i18n';
+import { useAppSelector } from 'store';
 
 interface IProps {
   image: ImageSourcePropType,
@@ -19,6 +20,7 @@ const ChapterCard = (props: IProps) => {
     title,
     onPress
   } = props;
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
 
   return (
     <TouchableWithoutFeedback onPress={onPress}>
@@ -26,8 +28,8 @@ const ChapterCard = (props: IProps) => {
         <Image source={image} style={styles.image}/>
 
         <View style={styles.content}>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.title}>{title}</Text>
+          <Text style={[styles.name, {color: appTheme?.textColor}]}>{name}</Text>
+          <Text style={[styles.title, {color: appTheme?.textColor}]}>{title}</Text>
         </View>
 
         <TextButton 

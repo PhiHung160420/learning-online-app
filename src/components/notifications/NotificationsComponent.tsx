@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.gray20,
     justifyContent: 'center',
     alignItems: 'center',
-
   },
   title: {
     ...fonts.h2,

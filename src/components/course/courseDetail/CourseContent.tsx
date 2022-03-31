@@ -1,6 +1,7 @@
 import { LineDivider } from 'components/common';
 import React, { createRef, useCallback, useEffect, useRef, useState } from 'react'
 import { Animated, Keyboard, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import { renderKeyItem } from 'utils/common';
 import constants from 'utils/constants';
@@ -43,7 +44,7 @@ const TabIndicator = ({measureLayout, scrollX}: ITabIndicator) => {
   )
 };
 
-const Tabs = ({scrollX, onPressTab}: any) => {
+const Tabs = ({scrollX, onPressTab, appTheme}: any) => {
   const [measureLayout, setMeasureLayout] = useState<any[]>([]);
   const containerRef = useRef<View>(null);
 
@@ -82,7 +83,7 @@ const Tabs = ({scrollX, onPressTab}: any) => {
               Keyboard.dismiss();
             }}
           >
-            <Text style={styles.tabLabel}>{item?.label || ''}</Text>
+            <Text style={[styles.tabLabel, {color: appTheme?.textColor}]}>{item?.label || ''}</Text>
           </TouchableOpacity>
         )
       })}
@@ -97,11 +98,13 @@ const CourseContent = ({flatlistRef, scrollX}: IProps) => {
     }) 
   }, []);
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: appTheme?.backgroundColor1}]}>
         {/* Tabs */}
         <View style={styles.tabs}>
-          <Tabs scrollX={scrollX} onPressTab={onPressTab}/>
+          <Tabs scrollX={scrollX} onPressTab={onPressTab} appTheme={appTheme}/>
         </View>
 
         {/* Line Divider */}

@@ -38,6 +38,7 @@ export default {
 	PROFILE_SCREEN_FIELD_PAGES: 'Pages',
 	PROFILE_SCREEN_FIELD_NOTI: 'New Courses Notifications',
 	PROFILE_SCREEN_FIELD_REMINDER: 'Study Reminder',
+	PROFILE_SCREEN_FIELD_LOG_OUT: 'Log Out',
 
 	// Course Screen
 	COURSE_SCREEN_HEADER: 'Course Listing',

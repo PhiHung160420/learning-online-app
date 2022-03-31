@@ -1,6 +1,7 @@
 import { IconButton, TextButton } from 'components/common';
 import React, { useEffect, useState } from 'react'
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { useAppSelector } from 'store';
 import colors from 'utils/colors';
 import { renderKeyItem } from 'utils/common';
 import data from 'utils/data';
@@ -15,6 +16,8 @@ const files = data?.course_details?.files;
 const CourseFiles = () => {
   const [students, setStudents] = useState<any[]>([]);
 
+  const appTheme = useAppSelector(state => state?.theme?.appTheme);
+
   useEffect(() => {
     if (list_students.length > 3) {
       const new_list_students = list_students.slice(0, 3);
@@ -28,7 +31,7 @@ const CourseFiles = () => {
     <ScrollView contentContainerStyle={styles.container}>
       {/* Students */}
       <View>
-        <Text style={styles.title}>{I18n.t('COURSE_FILES_STUDENTS')}</Text> 
+        <Text style={[styles.title, {color: appTheme?.textColor}]}>{I18n.t('COURSE_FILES_STUDENTS')}</Text> 
 
         <View style={styles.listComponent}>
           {students.map((item, index) => (
@@ -53,7 +56,7 @@ const CourseFiles = () => {
 
       {/* Files */}
       <View style={styles.marginTop}>
-        <Text style={styles.title}>{I18n.t('COURSE_FILES')}</Text>
+        <Text style={[styles.title, {color: appTheme?.textColor}]}>{I18n.t('COURSE_FILES')}</Text>
 
         {files.map((item, index) => (
           <View
@@ -63,14 +66,14 @@ const CourseFiles = () => {
             <Image source={item?.thumbnail} style={styles.image}/>
 
             <View style={styles.fileContent}>
-              <Text style={styles.fileName}>{item?.name}</Text>
+              <Text style={[styles.fileName, {color: appTheme?.textColor}]}>{item?.name}</Text>
               <Text style={styles.fileAuthor}>{item?.author}</Text>
-              <Text style={styles.fileUploadDate}>{item?.upload_date}</Text>
+              <Text style={[styles.fileUploadDate, {color: appTheme?.textColor}]}>{item?.upload_date}</Text>
             </View>
 
             <IconButton 
               icon={icons.menu}
-              iconStyle={styles.menuIcon}
+              iconStyle={[styles.menuIcon, {tintColor: appTheme?.tintColor}]}
               containerStyle={styles.menuButton}
               onPress={() => {}}
             />

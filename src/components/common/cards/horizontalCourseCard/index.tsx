@@ -105,7 +105,7 @@ const HorizontalCoursesCard = ({
             label={ratings.toString()}
             containerStyle={styles.ratingText}
             iconStyle={styles.ratingIconStyle}
-            labelStyle={styles.ratingLabelStyle}
+            labelStyle={[styles.ratingLabelStyle, {color: appTheme?.textColor}]}
           />
         </View>
       </View>
@@ -186,7 +186,6 @@ const styles = StyleSheet.create({
   },
   ratingLabelStyle: {
     marginLeft: sizes.size_5,
-    color: colors.black,
     ...fonts.h3,
   },
 });
