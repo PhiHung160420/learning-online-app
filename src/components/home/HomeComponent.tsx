@@ -105,7 +105,7 @@ const HomeComponent = ({onPressCategoryCard, onPressCourseDetail}: IProps) => {
           containerStyle={styles.popular}
           title={I18n.t('HOMR_SCREEN_POPULAR_COURSES')}
           button={I18n.t('HOME_SCREEN_SEE_ALL_BUTTON')}
-          onPress={() =>  {}}
+          onPress={() =>  navigate(screenNames.POPULAR_COURSES_SCREEN)}
         >
           <FlatList 
             data={data.courses_list_2}
