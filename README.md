@@ -30,6 +30,15 @@ The challenge (for learning purpose) was to develop Learning Online App using Re
    <kbd>
     <img src="https://github.com/PhiHung160420/learning-online-app/blob/master/assets/screenshots/10.png" title="Notifications Screen" width="250">
   </kbd>
+  <kbd>
+    <img src="https://github.com/PhiHung160420/learning-online-app/blob/master/assets/screenshots/11.png" title="Landing Screen" width="250">
+  </kbd>
+   <kbd>
+    <img src="https://github.com/PhiHung160420/learning-online-app/blob/master/assets/screenshots/12.png" title="Register Screen" width="250">
+  </kbd>
+   <kbd>
+    <img src="https://github.com/PhiHung160420/learning-online-app/blob/master/assets/screenshots/13.png" title="Login Screen" width="250">
+  </kbd>
   <br>
   <em>Some Screen Learning Online App Project</em>
 </p>
@@ -46,7 +55,7 @@ The challenge (for learning purpose) was to develop Learning Online App using Re
 #### 1. Clone the repo
 
 ```
-git clone https://github.com/PhiHung160420/MilkTeaApp.git
+git clone https://github.com/PhiHung160420/learning-online-app.git
 ```
 
 #### 2. npm or yarn install
