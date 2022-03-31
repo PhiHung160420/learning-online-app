@@ -98,5 +98,8 @@ export default {
 
 	// Popular Courses Screen
 	POPULAR_COURSES_TITLE: 'Popular Courses',
-	POPULAR_COURSES_SUBTITLE: 'All Courses'
+	POPULAR_COURSES_SUBTITLE: 'All Courses',
+
+	// Notifications
+	NOTIFICATIONS_TITLE: 'Notifications'
 }

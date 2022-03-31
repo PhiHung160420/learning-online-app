@@ -313,6 +313,7 @@ const course_details = {
 
 const notificationByDays = [
   {
+      id: 0,
       title: "Today",
       data: [
           {
@@ -337,9 +338,9 @@ const notificationByDays = [
               message: "Asked assiged you to watch professional videography course."
           }
       ],
-
   },
   {
+      id: 1,
       title: "Yesterday",
       data: [
           {
@@ -357,7 +358,6 @@ const notificationByDays = [
               message: "Your 50% discount code is: ON50DIS. Apply on checkout."
           },
       ],
-
   },
 ];
 

@@ -23,6 +23,7 @@ import IconLabelButton from './buttons/iconLabelButton';
 import InputField from './inputs/inputField';
 import PrimaryButton from './buttons/primaryButton';
 import RoleButton from './buttons/roleButton';
+import NotiCard from './cards/notiCard';
 
 export {
   BottomTabBar,
@@ -49,5 +50,6 @@ export {
   IconLabelButton,
   InputField,
   PrimaryButton,
-  RoleButton
+  RoleButton,
+  NotiCard
 };

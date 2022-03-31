@@ -9,6 +9,7 @@ import RegisterScreen from "./auth/register";
 import LandingScreen from "./landing/LandingScreen";
 import CategoriesScreen from "./categories/CategoriesScreen";
 import PopularCoursesScreen from "./course/popularCourses/PopularCoursesScreen";
+import NotificationsScreen from "./notifications/NotificationsScreen";
 
 export {
   HomeScreen,
@@ -21,5 +22,6 @@ export {
   RegisterScreen,
   LandingScreen,
   CategoriesScreen,
-  PopularCoursesScreen
+  PopularCoursesScreen,
+  NotificationsScreen
 }

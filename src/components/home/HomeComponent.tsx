@@ -26,6 +26,7 @@ const HomeComponent = ({onPressCategoryCard, onPressCourseDetail}: IProps) => {
       headerSubTitle={I18n.t('HOME_SCREEN_SUB_TITLE')}
       headerIcon={icons.notification}
       containerStyle={styles.container}
+      onPressHeaderIcon={() => navigate(screenNames.NOTIFICATIONS_SCREEN)}
     >
       <ScrollView
         contentContainerStyle={styles.content}
