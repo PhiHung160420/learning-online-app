@@ -1,4 +1,4 @@
-import {View, ViewComponent} from 'react-native';
+import {View} from 'react-native';
 
 const IntroduceScreen = () => {
   return <View />;
