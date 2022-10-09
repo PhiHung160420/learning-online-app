@@ -35,7 +35,7 @@ const TabIndicator = ({measureLayout, scrollX}: ITabIndicator) => {
   });
 
   return (
-    <Animated.View style={[styles.indicator, {width: tabIndicatorWidth, transform: [{ translateX}]}]}/>
+    <Animated.View style={[styles.indicator, {width: tabIndicatorWidth, transform: [{ translateX }]}]}/>
   )
 }
 
@@ -62,15 +62,9 @@ const BottomTabBar = memo(({scrollX, onBottomTabPress}: IBottomTab) => {
   }, [containerRef.current]);
   
   return (
-    <View
-      ref={containerRef}
-      style={styles.container}
-    >
-
-      {/* Tab Indicator */}
+    <View ref={containerRef} style={styles.container}>
       {measureLayout.length > 0 && <TabIndicator measureLayout={measureLayout} scrollX={scrollX}/>}
 
-      {/* Tabs */}
       {bottom_tabs.map((item, index) => {
         return (
           <TouchableOpacity 
@@ -80,9 +74,7 @@ const BottomTabBar = memo(({scrollX, onBottomTabPress}: IBottomTab) => {
             onPress={() => onBottomTabPress(index)}
           >
             <Image source={item.icon} style={styles.icon} resizeMode="contain" />
-            <Text style={styles.label}>
-              {item.label}
-            </Text>
+            <Text style={styles.label}>{item.label}</Text>
           </TouchableOpacity>
         )
       })}

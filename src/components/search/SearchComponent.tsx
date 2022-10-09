@@ -53,7 +53,7 @@ const SearchComponent = (props: IProps) => {
     if (event.nativeEvent.contentOffset.y > 10 && event.nativeEvent.contentOffset.y < 50) {
       scrollViewRef.current?.scrollTo({
         x: 0,
-        y: 60,
+        y: 70,
         animated: true
       })
     }

@@ -68,10 +68,8 @@ const LayoutComponent = () => {
 
   return (
     <View style={styles(appTheme).container}>
-      {/* Contents */}
       {renderContent()}
 
-      {/* BottomTab */}
       {renderBottomTab()}
     </View>
   )

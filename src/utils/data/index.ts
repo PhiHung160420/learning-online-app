@@ -210,7 +210,7 @@ const course_details = {
       {
           id: 1,
           name: "Student 2",
-          thumbnail: require("../../../assets/images/student_2.png")
+          thumbnail: require("../../../assets/images/student_1.png")
       },
       {
           id: 2,
@@ -335,7 +335,7 @@ const notificationByDays = [
           },
           {
               id: 2,
-              avatar: require("../../../assets/images/student_2.png"),
+              avatar: require("../../../assets/images/student_1.png"),
               name: "Customer Care",
               created_at: "3h 02m ago",
               message: "Your 50% discount code is: ON50DIS. Apply on checkout."
@@ -362,7 +362,7 @@ const notificationByDays = [
           },
           {
               id: 5,
-              avatar: require("../../../assets/images/student_2.png"),
+              avatar: require("../../../assets/images/student_1.png"),
               name: "Customer Care",
               created_at: "20h 02m ago",
               message: "Your 50% discount code is: ON50DIS. Apply on checkout."

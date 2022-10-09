@@ -16,7 +16,6 @@ const images = {
   sketch : require("../../../assets/images/sketch.png"),
   start_learning : require("../../../assets/images/start_learning.png"),
   student_1 : require("../../../assets/images/student_1.png"),
-  student_2 : require("../../../assets/images/student_2.png"),
   student_3 : require("../../../assets/images/student_3.png"),
   thumbnail_1 : require("../../../assets/images/thumbnail_1.png"),
   thumbnail_2 : require("../../../assets/images/thumbnail_2.png"),
