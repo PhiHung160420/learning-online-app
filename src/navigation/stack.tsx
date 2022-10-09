@@ -11,7 +11,6 @@ import {
   NotificationsScreen,
   PopularCoursesScreen,
   RegisterScreen,
-  TestScreen,
 } from 'screens';
 import screenNames from 'utils/screenName';
 
@@ -23,7 +22,6 @@ export const RootStack = () => {
     <Stack.Navigator
       screenOptions={{headerShown: false}}
       initialRouteName={'TEST_SCREEN'}>
-      <Stack.Screen name={'TEST_SCREEN'} component={TestScreen} />
       <Stack.Screen
         name={screenNames.LANDING_SCREEN}
         component={LandingScreen}
