@@ -16,6 +16,7 @@ import {
 import screenNames from 'utils/screenName';
 
 const Stack = createStackNavigator();
+console.log('test');
 
 export const RootStack = () => {
   return (
